@@ -1,6 +1,12 @@
 ﻿@{
     Layout = "~/Views/Shared/Index_Layout.cshtml";
 }
+@model  List<StudentWeb.Models.FreeTrail>
+
+@foreach (var i in Model)
+{
+    <td>@Html.DisplayFor(c => i.Email)</td>
+}
 
 <div class="col-md-12" style="background-color: white;padding: 30px;">
     <div class="activity-content  ">
@@ -91,46 +97,46 @@
 
         <div class="col-md-12 text-center">
             <div class="contactword">若有意願了解,請留下您的姓名、電話至網站右下角EMail至劉毅英文教育機構,會盡快與您聯繫為您服務。</div>
-          
-                                <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+
+            <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                      <div class="modal-dialog">
-                            <div class="loginmodal-container">
-                                <h1>請留下想詢問的課程內容</h1><br>
+                <div class="modal-dialog">
+                    <div class="loginmodal-container">
+                        <h1>請留下想詢問的課程內容</h1><br>
 
-                                    <form id="contactform" action="//formspree.io/email" method="POST">
-                                   <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
-                                            <input type="text" name="name" placeholder="Your name" class="form-control" autofocus="autofocus" required>
-                                        </div>
-                                    </div>
-                                   <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>
-                                            <input type="email" name="_replyto" placeholder="Your email" class="form-control" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                    <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
-                                            <textarea name="message" rows="6" class="form-control" type="text" required></textarea>
-                                        </div>
-                                    </div>
-
-
-                                   <input type="submit" class="btn btn-info pull-right" value="送出"/><span class="glyphicon glyphicon-send"></span>
-
-                                    </form>
-
-                              <div class="login-help">
-                                <a href="#">Register</a> - <a href="#">Forgot Password</a>
-                              </div>
+                        <form id="contactform" action="//formspree.io/email" method="POST">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
+                                    <input type="text" name="name" placeholder="Your name" class="form-control" autofocus="autofocus" required>
+                                </div>
                             </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>
+                                    <input type="email" name="_replyto" placeholder="Your email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                                    <textarea name="message" rows="6" class="form-control" type="text" required></textarea>
+                                </div>
+                            </div>
+
+
+                            <input type="submit" class="btn btn-info pull-right" value="送出" /><span class="glyphicon glyphicon-send"></span>
+
+                        </form>
+
+                        <div class="login-help">
+                            <a href="#">Register</a> - <a href="#">Forgot Password</a>
                         </div>
-                      </div>
-                           
+                    </div>
+                </div>
+            </div>
+
 
 
 
