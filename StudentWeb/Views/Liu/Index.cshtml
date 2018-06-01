@@ -1,0 +1,141 @@
+﻿@{
+    Layout = "~/Views/Shared/Index_Layout.cshtml";
+}
+
+<div class="col-md-12" style="background-color: white;padding: 30px;">
+    <div class="activity-content  ">
+        <div style="padding: 10px;margin: 10px;padding-left:  600px;font-size: 36px;font-weight: 800px;color: black;font-weight: 800px;">
+            <div class="lastnews" style="text-align: left">最新消息</div>
+        </div>
+
+
+        <div class="row">
+            <a href="#" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg1" data-cid="1" class="img-news" src="~/Content/img/DM/小高一LINE_P20180420_16452233.jpg">
+                </div>
+            </a>
+
+            <a href="#" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg2" data-cid="2" class="img-news" src="~/Content/img/DM/國七升國八LINE_P20180425_15585486.jpg">
+                </div>
+            </a>
+
+            <a href="#" class="col-md-4">
+                <div class="news-card">
+                    <img id="myImg3" class="img-news" data-cid="3" src="~/Content/img/DM/國八升國九LINE_P20180320_16140511.jpg">
+                </div>
+            </a>
+            <a href="#" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg4" class="img-news" data-cid="4" src="~/Content/img/DM/誠徵英文老師LINE_P20180309_15354812.jpg">
+                </div>
+            </a>
+            <a href="#" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg5" class="img-news" data-cid="5" src="~/Content/img/DM/劉毅英文高三招生簡章_20180409_180428_0002.jpg">
+                </div>
+            </a>
+
+            <a href="#" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg6" class="img-news" data-cid="6" src="~/Content/img/DM/劉毅英文歡慶50週年LINE_P20180316_11262505.jpg">
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-4 photo-block">
+    <img src="img/liu-Yi.png" />
+    <br> <br>
+    <div class="introLiu">1971年 劉毅老師發明「模考制度」，開始在台南一中對面的天主堂教英文。由八位同學開始教起。現在台大醫院副院長王主科教授就是當時的學生。</div>
+    <div class="introLiu">1972年 「劉毅英文」有四位同學考上台大醫科，陳耀楨為榜道。</div>
+    <div class="introLiu">1974年 「劉毅英文」轉戰台北，第一天只有一位同學，但劉毅老師仍然拼命上課，從此學生人數不斷增加。</div>
+    <div class="introLiu">1984年 創立「學習出版公司」，為當時唯一的專業英語出版，「劉毅英文」學生人數已達1200人。</div>
+    <div class="introLiu">1988年 劉毅老師發明「一天背好1000個英單字」學生人數突破2000人。</div>
+    <div class="introLiu">1995年 發明「考前魔鬼營」，一天讀15小時，勝過在家讀五天震撼補教界。</div>
+    <div class="introLiu">2000年 發明「超級戰鬥營」，無論規模、成效已是補教界的典範。</div>
+    <div class="introLiu">2003年 發明「一口氣英語」，一舉解決學英語的困擾，學生人數突破6000人。</div>
+    <div class="introLiu">2007年 成立「劉毅英文教育機構」，同時在班上課學生人數已達12000人。</div>
+</div>
+
+<div class="col-md-8 activity-area">
+    <div class="activity-content">
+        <div class="activity-date col-md-2">
+            <div class="month">July</div>
+            <div class="day">01</div>
+        </div>
+        <div class="activity-title col-md-10">
+
+            <div>高中指考日期</div>
+        </div>
+        <div class="clear"></div>
+        <div class="activity-content-bottom">
+            <div class="activity-counter col-md-8">
+            </div>
+            <div class="col-md-4">
+                <!--<button class="btn-ghost" onclick="#">考衝班報名</button>-->
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div class="testimonial-area">
+    <h1> </h1>
+    <div class="row1">
+
+        <div class="col-md-12 text-center">
+            <div class="contactword">若有意願了解,請留下您的姓名、電話至網站右下角EMail至劉毅英文教育機構,會盡快與您聯繫為您服務。</div>
+          
+                                <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+
+            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                      <div class="modal-dialog">
+                            <div class="loginmodal-container">
+                                <h1>請留下想詢問的課程內容</h1><br>
+
+                                    <form id="contactform" action="//formspree.io/email" method="POST">
+                                   <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
+                                            <input type="text" name="name" placeholder="Your name" class="form-control" autofocus="autofocus" required>
+                                        </div>
+                                    </div>
+                                   <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>
+                                            <input type="email" name="_replyto" placeholder="Your email" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                                            <textarea name="message" rows="6" class="form-control" type="text" required></textarea>
+                                        </div>
+                                    </div>
+
+
+                                   <input type="submit" class="btn btn-info pull-right" value="送出"/><span class="glyphicon glyphicon-send"></span>
+
+                                    </form>
+
+                              <div class="login-help">
+                                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                           
+
+
+
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

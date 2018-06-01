@@ -1,0 +1,104 @@
+﻿.head-line{
+    background-color: #f54575;
+    z-index: 41;
+    position: relative;
+    font-size: 18px;
+    color: white;
+    /*font-weight: bold;
+    letter-spacing: 7px;*/
+    transition: all 200ms linear;
+    display: block;
+
+}
+  .gallery
+{
+    display: inline-block;
+    margin-top: 20px;
+}
+    .img-card
+    {
+      /* height: 800px;*/
+      width: 100%;
+        padding: 20px;
+
+    }
+
+    .img-card>img{height:550px;  }
+
+    .tit{text-align:center;color: black;letter-spacing: 2.5px;font-size: 52px;font-weight: 400; font-family: 華康竹風體W4;padding: 70px;}
+    .titTop{margin-left:100px; ; text-align:left;color: white;letter-spacing: 2.5px;font-size: 75px;font-weight: 400; font-family: 華康竹風體W4;
+     padding: 5px;padding-top: 150px;padding-right: 50px;margin-top: 110px;}
+
+
+
+
+.head-line .container{
+	/*background: black;*/
+	padding: 5px;
+	transition: all 200ms linear;
+}
+.bd-event{
+	color: #0256ad;
+}
+.sw-event{
+	color: #d83264;
+}
+.head-line:hover{
+	padding: 20px 5px;
+	text-decoration: none;
+
+}
+.head-line:hover .fa{
+	padding-left: 5px;
+}
+.head-line a{
+	padding: 3px 10px;
+	display: inline-block;
+	/*box-shadow: 0 0 0 1px rgba(255,255,255,.5);*/
+	margin-right: 5px;
+	border-radius: 50px
+}
+.head-line:hover, .head-line:visited, .head-line:active{
+	color: white;
+	text-decoration: none;
+}
+.head-line .fa{
+	color: white;
+	transition: all 200ms linear;
+}
+.head-line a:hover{
+	color: white;
+}
+    .con{top: 428px;}
+
+
+/*@media (max-width: 1500px)
+{
+    .img-card
+    {
+
+    padding: 20px;
+    }
+}   */
+
+
+@media (max-width: 992px)
+{
+ .head-line{
+   font-size: 14px;
+  }
+
+    .con{top: 180px;}
+    .img-card
+    {
+        margin: 0 auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+ .tit{text-align:center;color: black;letter-spacing: 2.5px;font-size: 45px;font-weight: 400; font-family: 華康竹風體W4;
+     padding: 5px;padding-top: 30px;
+    }
+    .titTop{text-align:left;color: white;letter-spacing: 2.5px;font-size:55px;font-weight: 400; font-family: 華康竹風體W4;
+     padding: 5px;padding-bottom: 100px;margin-top: 150px;text-align: left;right: 40px;}
+
+}

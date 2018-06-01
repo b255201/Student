@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89AFD49D-9CCA-4B8E-B4CD-EA49DDFF3E9B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudentWeb</RootNamespace>
+    <AssemblyName>StudentWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LiuController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\book.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\modal.css" />
+    <Content Include="Content\css\mystyle.css" />
+    <Content Include="Content\css\slick.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\banner_01.png" />
+    <Content Include="Content\img\banner_02.jpg" />
+    <Content Include="Content\img\DM\劉毅英文歡慶50週年LINE_P20180316_11262505.jpg" />
+    <Content Include="Content\img\DM\劉毅英文高三招生簡章_20180409_180428_0002.jpg" />
+    <Content Include="Content\img\DM\國七升國八LINE_P20180425_15585486.jpg" />
+    <Content Include="Content\img\DM\國八升國九LINE_P20180320_16140511.jpg" />
+    <Content Include="Content\img\DM\小高一LINE_P20180420_16452233.jpg" />
+    <Content Include="Content\img\DM\誠徵英文老師LINE_P20180309_15354812.jpg" />
+    <Content Include="Content\img\heigh\01.png" />
+    <Content Include="Content\img\heigh\02.png" />
+    <Content Include="Content\img\heigh\03.png" />
+    <Content Include="Content\img\heigh\04.png" />
+    <Content Include="Content\img\heigh\05.png" />
+    <Content Include="Content\img\junior_high.jpg" />
+    <Content Include="Content\img\junior_high_01.jpg" />
+    <Content Include="Content\img\kid_class_01.jpg" />
+    <Content Include="Content\img\liu-Yi.png" />
+    <Content Include="Content\img\liu.mp4" />
+    <Content Include="Content\img\logo_LE.jpg" />
+    <Content Include="Content\img\newbook\DVD_系列\一分鐘背9個單字講座實況DVD_二片_DVD盒外標_20170411.gif" />
+    <Content Include="Content\img\newbook\DVD_系列\一生必背的200個諺語講座實況DVD.jpg" />
+    <Content Include="Content\img\newbook\DVD_系列\喜怒哀樂食衣住行英語_講座實況DVD_20160715_印.jpg" />
+    <Content Include="Content\img\newbook\DVD_系列\時速破百單字快速記憶講座_DVD.jpg" />
+    <Content Include="Content\img\newbook\DVD_系列\用會話背7000字講座實況_20170706.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\01.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\02.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\03.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\04.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\05.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\06.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\07.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\08.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\09.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\10.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\11.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\12.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\13.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\14.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\15.jpg" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\16.jpg" />
+    <Content Include="Content\img\newbook\high\01.jpg" />
+    <Content Include="Content\img\newbook\high\02.jpg" />
+    <Content Include="Content\img\newbook\high\03.jpg" />
+    <Content Include="Content\img\newbook\high\04.jpg" />
+    <Content Include="Content\img\newbook\high\05.jpg" />
+    <Content Include="Content\img\newbook\high\06.jpg" />
+    <Content Include="Content\img\newbook\high\07.jpg" />
+    <Content Include="Content\img\newbook\high\08.jpg" />
+    <Content Include="Content\img\newbook\high\09.jpg" />
+    <Content Include="Content\img\newbook\high\10.jpg" />
+    <Content Include="Content\img\newbook\high\11.jpg" />
+    <Content Include="Content\img\newbook\high\12.jpg" />
+    <Content Include="Content\img\newbook\high\13.jpg" />
+    <Content Include="Content\img\newbook\high\14.jpg" />
+    <Content Include="Content\img\newbook\high\15.jpg" />
+    <Content Include="Content\img\newbook\high\16.jpg" />
+    <Content Include="Content\img\newbook\high\17.jpg" />
+    <Content Include="Content\img\newbook\high\18.jpg" />
+    <Content Include="Content\img\newbook\high\19.jpg" />
+    <Content Include="Content\img\newbook\high\20.jpg" />
+    <Content Include="Content\img\newbook\high\21.jpg" />
+    <Content Include="Content\img\newbook\high\22.jpg" />
+    <Content Include="Content\img\newbook\high\23.jpg" />
+    <Content Include="Content\img\newbook\high\24.jpg" />
+    <Content Include="Content\img\newbook\high\25.jpg" />
+    <Content Include="Content\img\newbook\high\26.jpg" />
+    <Content Include="Content\img\newbook\high\27.jpg" />
+    <Content Include="Content\img\newbook\high\28.jpg" />
+    <Content Include="Content\img\newbook\high\29.jpg" />
+    <Content Include="Content\img\newbook\high\30.jpg" />
+    <Content Include="Content\img\newbook\junior\01.jpg" />
+    <Content Include="Content\img\newbook\junior\02.jpg" />
+    <Content Include="Content\img\newbook\junior\03.jpg" />
+    <Content Include="Content\img\newbook\junior\04.jpg" />
+    <Content Include="Content\img\newbook\junior\05.jpg" />
+    <Content Include="Content\img\newbook\junior\06.jpg" />
+    <Content Include="Content\img\newbook\junior\07.jpg" />
+    <Content Include="Content\img\newbook\junior\08.jpg" />
+    <Content Include="Content\img\newbook\junior\09.jpg" />
+    <Content Include="Content\img\newbook\junior\10.jpg" />
+    <Content Include="Content\img\newbook\junior\11.jpg" />
+    <Content Include="Content\img\newbook\junior\12.jpg" />
+    <Content Include="Content\img\newbook\junior\13.jpg" />
+    <Content Include="Content\img\newbook\junior\14.jpg" />
+    <Content Include="Content\img\newbook\junior\15.jpg" />
+    <Content Include="Content\img\newbook\junior\16.jpg" />
+    <Content Include="Content\img\newbook\junior\17.jpg" />
+    <Content Include="Content\img\newbook\junior\18.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢公布字彙-090223.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢模擬試題%28一%29.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢模擬試題%28一%29_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢模擬試題%28二%29.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢模擬試題%28二%29_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力001.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力002.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力03_灰.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力03_粉綠.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力04.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力05.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力06.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英檢聽力07.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英語克漏字.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英語字彙500題_20170703_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英語文法測驗_20171208_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英語檢定複試測驗_第二冊_教師手冊_20150210.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英語檢定複試測驗_第二冊_題本_20150423.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\中級英語閱讀測驗_20120529_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢公佈字彙_100712.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢模擬試題%28一%29-教師手冊090916.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢模擬試題%28三%29-教師手冊20110406_印 [轉換].jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢模擬試題%28二%29-教師手冊100810.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢模擬試題%28五%29-教師手冊20111205_印 [轉換].jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢模擬試題%28四%29-教師手冊20111202_印 [轉換].jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢閱讀能力測驗%28一%29_教師手冊_20161024.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢閱讀能力測驗%28一%29_題本_20161024.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢閱讀能力測驗%28二%29_教師手冊_20161219.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英檢閱讀能力測驗%28二%29_題本_20161219.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語克漏字250題_教師手冊_20160519_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語克漏字250題_題本_20160519_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語口說測驗-080811.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語字彙500題_教師手冊_1221.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語字彙500題_題本_1221.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語寫作口說測驗_20171017.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語閱讀測驗150題_教師手冊_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\初級英語閱讀測驗150題_題本_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\國中會考模擬試題第三冊_教師手冊20180108.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\國中會考英語模擬試題第三冊_16K_20180108-01.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\國中會考閱讀測驗進階_教師手冊_25K_20180118_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\國中會考閱讀測驗進階_題本_16K_20180117_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新中檢初試測驗題本%28一%29_教師手冊_20151230_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新中檢初試測驗題本%28一%29_題本_20151230_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新中級英語檢定複試測驗_教師手冊_20150210_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新中級英語檢定複試測驗_第一冊_題本_20150305_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初檢複試測驗%28一%29.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初檢複試測驗%28一%29_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28一%29_090929.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28三%29_20110404_印 [轉換].jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28二%29_100712.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28五%29_20111129 [轉換].jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28四%29 _再版_20180309_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28四%29 教師手冊_再版_20180309_印.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級模擬試題%28四%29_20111129_印 [轉換].jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28一%29_18K.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28一%29_18K_20180308.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28一%29_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28一%29_教師手冊_20180313.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28二%29_16K.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28二%29_16K_20180313.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28二%29_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢聽力檢定%28二%29_教師手冊_20180313.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢複試測驗_教師手冊_20171031.jpg" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\新初級英檢複試測驗_題本_20171031.jpg" />
+    <Content Include="Content\img\newbook\全真多益模擬試題及教本_1-3冊\全真多益模擬試題_第一冊.jpg" />
+    <Content Include="Content\img\newbook\全真多益模擬試題及教本_1-3冊\全真多益模擬試題_第一冊_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\全真多益模擬試題及教本_1-3冊\全真多益模擬試題_第三冊.jpg" />
+    <Content Include="Content\img\newbook\全真多益模擬試題及教本_1-3冊\全真多益模擬試題_第三冊_教師手冊0923.jpg" />
+    <Content Include="Content\img\newbook\全真多益模擬試題及教本_1-3冊\全真多益模擬試題_第二冊_印.jpg" />
+    <Content Include="Content\img\newbook\全真多益模擬試題及教本_1-3冊\全真多益模擬試題_第二冊_教師手冊_印.jpg" />
+    <Content Include="Content\img\newbook\字彙5000_20160630_白底.jpg" />
+    <Content Include="Content\img\newbook\字彙5000_20160630_白底_印.jpg" />
+    <Content Include="Content\img\newbook\托福系列\托福網路獨立寫作185篇_20170725.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第一冊_20160921.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第七%27冊_20171227_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第七冊_老師上課_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第三冊_20170320.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第三冊_教師手冊20170511.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第二冊_20161226_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第二冊_教師手冊20170411_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第五冊_20170807_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第五冊_教師手冊_16K_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第八冊_20180306_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第六冊_20171012_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第六冊_教師手冊_印.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第四冊_20170519.jpg" />
+    <Content Include="Content\img\newbook\新制多益全真模擬試題及教本_1-9冊\新制多益全真模擬試題_第四冊_教師手冊.jpg" />
+    <Content Include="Content\img\newbook\時速破百%281%29.jpg" />
+    <Content Include="Content\img\newbook\時速破百%282%29.jpg" />
+    <Content Include="Content\img\newbook\時速破百%283%29.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\01_一口氣背文法_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\01_少兒英語短篇寫作_第一冊.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\02_全真文法450題詳解_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\02_少兒英語語法測驗_第一冊.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\03_一口氣考試英語_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\03_少兒英語完形填空_第一冊.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\04_全真克漏字282題詳解_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\05_全真閱讀測驗詳解_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\06_用字根背單字_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\07_升大學英作文_教本_1221.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\08_一天背好1000單字_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\09_大學入試全真英文試題教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\10_英文字根串聯記憶_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\11_演講式英語_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\12_英文翻譯句型_教師手冊_印一千本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\12_英文翻譯句型_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\13_高中必考英文法_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\14_一天背好狄克生成語_教師手冊_修改.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\14_一天背好狄克生成語_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\15_大學入試文意選填_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\16_大學入試篇章結構_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\17_用會話背7000字_教本_照片.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\18_一分鐘背9個單字_教本_20170407.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\19_高中7000字測驗題庫_教本_20170407.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\20_近五年學測英文試題教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\21_7000字克漏字測驗教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\22_7000字閱讀測驗教本_藍.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\23_7000字學測試題教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\24_第6級單字輕鬆背_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\25_問一答三英語教本-02_印.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\26_高中常考3500分類輕鬆背_教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\27_高中書信英作文100篇教本.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\28_一口氣背會話教本_20171026_粉綠.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\29_7000字文意選填詳解_教本_湖水藍.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\30_如何寫看圖英作文教本-01.jpg" />
+    <Content Include="Content\img\newbook\英文名師必備教本\31_7000字篇章結構_教師手冊_平面_小.jpg" />
+    <Content Include="Content\img\Senior_001.jpg" />
+    <Content Include="Content\img\Senior_002.jpg" />
+    <Content Include="Content\js\hoverpulse.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\myfunction.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\img\DM\用封面就好_20180328_學測鐘點戰_12頁[第8頁有錯不要].pdf" />
+    <Content Include="Content\img\newbook\elementary_school_lesson\Thumbs.db" />
+    <Content Include="Content\img\newbook\Thumbs.db" />
+    <Content Include="Content\img\newbook\全民英檢_初級_中級_中高級\Thumbs.db" />
+    <Content Include="Content\img\newbook\升大學詞彙3500_20180314_印.ai" />
+    <Content Include="Content\img\newbook\升大學詞彙3500_20180314_印.pdf" />
+    <Content Include="Content\img\newbook\國中2000字輕鬆背_20170926_印.ai" />
+    <Content Include="Content\img\newbook\國中2000字輕鬆背_20170926_印.pdf" />
+    <Content Include="Content\img\newbook\老師卡通造型圖.ai" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <None Include="Views\Liu\elementary_school_book.cshtml" />
+    <None Include="Views\Liu\High_school_book.html.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Liu\Index.cshtml" />
+    <Content Include="Views\Shared\Index_Layout.cshtml" />
+    <Content Include="Views\Shared\book_Layout.cshtml" />
+    <Content Include="Views\Liu\High_school_lesson.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\img\newbook\初級英檢\" />
+    <Folder Include="Content\img\newbook\多益系列\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50818</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50818/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 封裝。請啟用 NuGet 封裝還原，以下載該封裝。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
