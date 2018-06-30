@@ -1,6 +1,7 @@
 .loginmodal-container {
-    padding: 30px;
-    max-width: 350px;
+    padding-top: 20px;
+    padding-left: 5px;
+    max-width: 380px;
     width: 100% !important;
     background-color: #F7F7F7;
     margin: 0 auto;
@@ -349,5 +350,18 @@
     .lastnews {
         margin-left: 50px;
     }
+    .photo-block {
+        height: 795px;
+    }
+    .slide-block {
+       height:700px;
+        }
+ 
 }
 /*****/
+@media (min-width: 768px) {
+    #ContactForm {
+    width:100%;
+    }
+}
+

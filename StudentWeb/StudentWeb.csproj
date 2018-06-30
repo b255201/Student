@@ -156,7 +156,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\lessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
     <Compile Include="Models\FreeTrail.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
@@ -190,6 +192,7 @@
     <Content Include="Content\css\mystyle.css" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\w3.css" />
     <Content Include="Content\img\banner_01.png" />
     <Content Include="Content\img\banner_02.jpg" />
     <Content Include="Content\img\DM\劉毅英文歡慶50週年LINE_P20180316_11262505.jpg" />
@@ -406,6 +409,7 @@
     <Content Include="Content\img\newbook\英文名師必備教本\31_7000字篇章結構_教師手冊_平面_小.jpg" />
     <Content Include="Content\img\Senior_001.jpg" />
     <Content Include="Content\img\Senior_002.jpg" />
+    <Content Include="Content\js\boostrap3.js" />
     <Content Include="Content\js\hoverpulse.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\myfunction.js" />
@@ -426,6 +430,7 @@
     <Content Include="Content\img\newbook\國中2000字輕鬆背_20170926_印.ai" />
     <Content Include="Content\img\newbook\國中2000字輕鬆背_20170926_印.pdf" />
     <Content Include="Content\img\newbook\老師卡通造型圖.ai" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -444,8 +449,10 @@
     <Content Include="Models\StudentModel.edmx.diagram">
       <DependentUpon>StudentModel.edmx</DependentUpon>
     </Content>
-    <None Include="Views\Liu\elementary_school_book.cshtml" />
-    <None Include="Views\Liu\High_school_book.html.cshtml" />
+    <Content Include="Views\lesson\High_school.cshtml" />
+    <Content Include="Views\Book\High_school.cshtml" />
+    <Content Include="Views\Book\elementary_school.cshtml" />
+    <Content Include="Views\Book\junior_school.cshtml" />
     <Content Include="Models\StudentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>StudentModel.edmx</DependentUpon>
@@ -473,7 +480,6 @@
     <Content Include="Views\Liu\Index.cshtml" />
     <Content Include="Views\Shared\Index_Layout.cshtml" />
     <Content Include="Views\Shared\book_Layout.cshtml" />
-    <Content Include="Views\Liu\High_school_lesson.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

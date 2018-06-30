@@ -1,0 +1,331 @@
+﻿@{
+    Layout = "~/Views/Shared/book_Layout.cshtml";
+}
+<style>
+    .head-line{
+    background-color: #f54575;
+    z-index: 41;
+    position: relative;
+    font-size: 18px;
+    color: white;
+    /*font-weight: bold;
+    letter-spacing: 7px;*/
+    transition: all 200ms linear;
+    display: block;
+
+}
+  .gallery
+{
+    display: inline-block;
+    margin-top: 20px;
+}
+    .img-card
+    {
+      /* height: 800px;*/
+
+        padding: 20px;
+
+    }
+
+    .img-card>img{height:500px;  }
+
+    .tit{text-align:center;color: black;letter-spacing: 2.5px;font-size: 52px;font-weight: 400; font-family: 華康竹風體W4;padding: 70px;}
+    .titTop{margin-left:100px; ; text-align:left;color: white;letter-spacing: 2.5px;font-size: 75px;font-weight: 400; font-family: 華康竹風體W4;
+     padding: 5px;padding-top: 150px;padding-right: 50px;margin-top: 110px;}
+
+
+
+
+.head-line .container{
+	/*background: black;*/
+	padding: 5px;
+	transition: all 200ms linear;
+}
+.bd-event{
+	color: #0256ad;
+}
+.sw-event{
+	color: #d83264;
+}
+.head-line:hover{
+	padding: 20px 5px;
+	text-decoration: none;
+
+}
+.head-line:hover .fa{
+	padding-left: 5px;
+}
+.head-line a{
+	padding: 3px 10px;
+	display: inline-block;
+	/*box-shadow: 0 0 0 1px rgba(255,255,255,.5);*/
+	margin-right: 5px;
+	border-radius: 50px
+}
+.head-line:hover, .head-line:visited, .head-line:active{
+	color: white;
+	text-decoration: none;
+}
+.head-line .fa{
+	color: white;
+	transition: all 200ms linear;
+}
+.head-line a:hover{
+	color: white;
+}
+    .con{top: 428px;}
+
+
+
+
+@@media (max-width: 992px)
+{
+ .head-line{
+   font-size: 14px;
+  }
+
+    .img-card
+    {
+        margin: 0 auto;
+        padding: 20px;
+        margin-bottom: 20px;
+
+    }
+ .tit{text-align:center;color: black;letter-spacing: 2.5px;font-size: 45px;font-weight: 400; font-family: 華康竹風體W4;
+     padding: 5px;padding-top: 30px;
+    }
+    .titTop{text-align:left;color: white;letter-spacing: 2.5px;font-size:55px;font-weight: 400; font-family: 華康竹風體W4;
+     padding: 5px;padding-bottom: 100px;margin-top: 150px;text-align: left;right: 30px;}
+     .imgst{width: 400px !important;height: 380px !important;}
+}
+
+
+</style>
+
+
+<div class="row">
+    <div class='list-group gallery col-sm-12'>
+        <div class='col-sm-6 col-md-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/01.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/01.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6 col-md-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/02.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/02.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/03.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/03.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/04.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/04.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/05.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/05.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/06.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/06.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/07.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/07.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/08.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/08.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/09.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/09.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/10.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/10.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/11.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/11.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/12.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/12.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/13.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/13.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/14.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/14.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/15.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/15.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/16.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/16.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/17.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/17.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/18.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/18.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/19.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/19.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/20.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/20.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/21.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/21.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/22.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/22.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/23.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/23.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/24.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/24.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/25.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/25.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/26.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/26.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/27.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/27.jpg" />
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/28.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/28.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/29.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/29.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/newbook/high/30.jpg">
+                <img class="img-responsive imgst" alt="" src="~/Content/img/newbook/high/30.jpg" />
+
+            </a>
+        </div> <!-- col-6 / end -->
+
+
+    </div> <!-- list-group / end -->
+</div> <!-- row / end -->
+
+<script>
+    $(function () {
+        $(".tit").text("學測書本");
+    })
+    function ContactSend() {
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+
+</script>

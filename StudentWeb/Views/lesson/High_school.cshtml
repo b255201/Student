@@ -1,0 +1,136 @@
+﻿@{
+   Layout = "~/Views/Shared/book_Layout.cshtml";
+}
+
+<style>
+    .img-card > img {
+        height: 500px;
+    }
+    @@media (max-width: 992px) {
+        .head-line {
+            font-size: 14px;
+        }
+
+        .con {
+            top: 428px;
+        }
+
+        .img-card {
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tit {
+            text-align: center;
+            color: black;
+            letter-spacing: 2.5px;
+            font-size: 45px;
+            font-weight: 400;
+            font-family: 華康竹風體W4;
+            padding: 5px;
+            padding-top: 30px;
+        }
+
+        .titTop {
+            text-align: left;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 55px;
+            font-weight: 400;
+            font-family: 華康竹風體W4;
+            padding: 5px;
+            padding-bottom: 100px;
+            margin-top: 150px;
+            text-align: left;
+            right: 30px;
+        }
+
+        .imgst {
+            width: 400px !important;
+            height: 380px !important;
+        }
+    }
+</style>
+
+<div class="row">
+    <div class='list-group gallery col-sm-12'>
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/heigh/01.png">
+                <img class="img-responsive" alt="" src="~/Content/img/heigh/01.png" />
+                <div class='text-right'>
+                    <small class='text-muted'>課程時間</small>
+                </div> <!-- text-right / end -->
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/heigh/02.png">
+                <img class="img-responsive" alt="" src="~/Content/img/heigh/02.png" />
+                <div class='text-right'>
+                    <small class='text-muted'>獎學金</small>
+                </div> <!-- text-right / end -->
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/heigh/03.png">
+                <img class="img-responsive" alt="" src="~/Content/img/heigh/03.png" />
+                <div class='text-right'>
+                    <small class='text-muted'>國、高中英文學習差異</small>
+                </div> <!-- text-right / end -->
+            </a>
+        </div> <!-- col-6 / end -->
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/heigh/04.png">
+                <img class="img-responsive" alt="" src="~/Content/img/heigh/04.png" />
+                <div class='text-right'>
+                    <small class='text-muted'>教學團隊</small>
+                </div> <!-- text-right / end -->
+            </a>
+        </div> <!-- col-6 / end -->
+
+        <div class='col-sm-6'>
+            <a class="thumbnail fancybox img-card" rel="ligthbox" href="~/Content/img/heigh/05.png">
+                <img class="img-responsive tar" alt="" src="~/Content/img/heigh/05.png" />
+                <div class='text-right'>
+                    <small class='text-muted'>高一目標</small>
+                </div> <!-- text-right / end -->
+            </a>
+        </div> <!-- col-6 / end -->
+
+    </div> <!-- row / end -->
+
+</div>
+
+<script>
+    $(function () {
+        $(".tit").text("國三升高一課程");
+    })
+    function ContactSend() {
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+</script>
