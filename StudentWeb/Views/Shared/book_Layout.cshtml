@@ -72,7 +72,7 @@
 
     </header>
     <div class="img-background">
-        <div class="slogan container1 titTop">
+        <div class="slogan  titTop">
             <!--高中課程-->
         </div>
         <div class="full-image">
@@ -90,107 +90,97 @@
         </div>
 
 
-        <div class="col-md-12">
+        <div class="col-md-12" style="background-color:#008888;">
             <div class="tit"></div>
         </div>
+        <div class="clear"></div>
 
 
-
-        <div class="article-list col-md-12 container1" style="padding: 20px;border-bottom:2px solid gray;">
-
-            <div class="">
-
-                @RenderBody()
+        @*<div class="article-list col-md-12 container1" style="padding: 20px;border-bottom:2px solid gray;">*@
 
 
+        @RenderBody()
 
-
-            </div>
-
-
-            <div class="clear"></div>
-            <!--*****-->
-        </div>
 
 
         <!--**contact form***-->
 
+        <div>
+            <div class="col-md-12 contact-block" style="text-align:center;margin-bottom:90px;">
 
-        <div class="col-md-12 contact-block" style="text-align:center" >
 
+                <div class="contactword">
+                    聯絡我們
 
-            <div class="contactword">
-                聯絡我們
+                </div>
+
+                <div class="col-md-3"></div>
+
+                @using (Html.BeginForm("InsertContact", "LiuController", FormMethod.Post, new { @id = "ContactForm", @class = "form-horizontal col-sm-6 ", role = "form" }))
+                {
+                    <div class="form-group" style="text-align:left">
+
+                        <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="name">姓名:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="name" placeholder="姓名(必填)" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align:left">
+                        <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Schoolname">學校:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Schoolname" placeholder="學校" name="Schoolname">
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align:left">
+                        <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="email">信箱:</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="email" placeholder="信箱" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align:left">
+                        <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Phone">手機:</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="Phone" placeholder="手機(電話或手機選一)" name="Phone">
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align:left">
+                        <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="LocalPhone">電話:</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="LocalPhone" placeholder="電話(電話或手機選一)" name="LocalPhone">
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align:left">
+                        <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Course">課程:</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="Course" name="Course">
+                                <option value="小六升國七精熟銜接班">小六升國七精熟銜接班</option>
+                                <option value="國七升國八超前進度班">國七升國八超前進度班</option>
+                                <option value="會考保證班">會考保證班</option>
+                                <option value="高一英文課程">高一英文課程</option>
+                                <option value="高一數學課程">高一數學課程</option>
+                                <option value="高二三英文課程">高二三英文課程</option>
+                                <option value="高二數學課程">高二數學課程</option>
+                                <option value="學測保證班">學測保證班</option>
+                                <option value="TOEIC新制多益課程">TOEIC新制多益課程</option>
+                                <option value="GEPT全民英檢中級複試班">GEPT全民英檢中級複試班</option>
+                                <option value="高效英文會話">高效英文會話</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align:left;">
+                        <label style="margin-right:-15px;" class="control-label col-sm-2"></label>
+                        <div class="col-sm-9">
+                            <div style="text-align:right">
+                                <a class="type-dark btn-ghost" onclick="ContactSend()" style="cursor:pointer">送出</a>
+                            </div>
+                        </div>
+                    </div>
+                }
 
             </div>
 
-            <div class="col-md-3"></div>
-
-            @using (Html.BeginForm("InsertContact", "LiuController", FormMethod.Post, new { @id = "ContactForm", @class = "form-horizontal col-sm-6 ", role = "form" }))
-            {
-                <div class="form-group" style="text-align:left">
-
-                    <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="name">姓名:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="name" placeholder="姓名(必填)" name="name">
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:left">
-                    <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Schoolname">學校:</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="Schoolname" placeholder="學校" name="Schoolname">
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:left">
-                    <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="email">信箱:</label>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control" id="email" placeholder="信箱" name="email">
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:left">
-                    <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Phone">手機:</label>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control" id="Phone" placeholder="手機(電話或手機選一)" name="Phone">
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:left">
-                    <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="LocalPhone">電話:</label>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control" id="LocalPhone" placeholder="電話(電話或手機選一)" name="LocalPhone">
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:left">
-                    <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Course">課程:</label>
-                    <div class="col-sm-9">
-                        <select class="form-control" id="Course" name="Course">
-                            <option value="小六升國七精熟銜接班">小六升國七精熟銜接班</option>
-                            <option value="國七升國八超前進度班">國七升國八超前進度班</option>
-                            <option value="會考保證班">會考保證班</option>
-                            <option value="高一英文課程">高一英文課程</option>
-                            <option value="高一數學課程">高一數學課程</option>
-                            <option value="高二三英文課程">高二三英文課程</option>
-                            <option value="高二數學課程">高二數學課程</option>
-                            <option value="學測保證班">學測保證班</option>
-                            <option value="TOEIC新制多益課程">TOEIC新制多益課程</option>
-                            <option value="GEPT全民英檢中級複試班">GEPT全民英檢中級複試班</option>
-                            <option value="高效英文會話">高效英文會話</option>
-                            <option value="其他">其他</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:left;margin-top:25px">
-                    <label style="margin-right:-15px;" class="control-label col-sm-2"></label>
-                    <div class="col-sm-9">
-                        <div style="text-align:right">
-                            <a class="type-dark btn-ghost" onclick="ContactSend()" style="cursor:pointer">送出</a>
-                        </div>
-                    </div>
-                </div>
-            }
-
         </div>
-
-
 
 
 

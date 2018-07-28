@@ -6,6 +6,17 @@
     <edmx:Diagrams>
       <Diagram DiagramId="21a325a5f9eb49ccaebb5a094feeab50" Name="Diagram1">
         <EntityTypeShape EntityType="StudentModel.FreeTrail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentModel.employee" Width="1.5" PointX="5.625" PointY="3.875" />
+        <EntityTypeShape EntityType="StudentModel.employeeCategory" Width="1.5" PointX="3.375" PointY="4.625" />
+        <EntityTypeShape EntityType="StudentModel.employeeCategoryDetail" Width="1.5" PointX="8.625" PointY="4.625" />
+        <EntityTypeShape EntityType="StudentModel.permission" Width="1.5" PointX="6.375" PointY="0.75" />
+        <AssociationConnector Association="StudentModel.FK_employee_employeeCategory" />
+        <AssociationConnector Association="StudentModel.FK_employeeCategoryDetails_employeeCategory" />
+        <AssociationConnector Association="StudentModel.FK_employeeCategoryDetails_permission" />
+        <EntityTypeShape EntityType="StudentModel.JuniorHigh_School" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StudentModel.elementary_Book" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="StudentModel.High_Book" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="StudentModel.junior_Book" Width="1.5" PointX="2.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

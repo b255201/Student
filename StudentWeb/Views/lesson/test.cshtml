@@ -1,0 +1,257 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<StudentWeb.Models.JuniorHigh_School>
+
+@{
+    Layout = "~/Views/Shared/book_Layout.cshtml";
+}
+<link href="~/Content/css/templatemo-style.css" rel="stylesheet" />
+
+<style>
+    .img-card > img {
+        height: 600px;
+        width: 540px;
+    }
+    <!-- -->
+    .view {
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+    .head {
+        padding: 30px 0px;
+        color: #ffffff;
+        background-color: #004444;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 175%;
+        display: inline-block;
+    }
+
+    .contact {
+        float: right;
+        display: inline-block;
+    }
+
+    .social {
+        margin: 0px 5px;
+    }
+
+
+    .main {
+        padding: 30px 0px;
+        background-color: #eeeeee;
+    }
+
+    .block {
+        width: 280px;
+        height: 280px;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        line-height: 40px;
+        background-color: #eeffff;
+        box-shadow: 0px 0px 5px #888888;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .block-head {
+        font-weight: bold;
+        font-size: 120%;
+    }
+
+    .block-main {
+        margin-top: 10px;
+    }
+
+    .tit {
+        text-align: center;
+        color: white;
+        letter-spacing: 2.5px;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 30px;
+    }
+
+    .imgst {
+        width: 100%;
+        height: 380px !important;
+    }
+
+
+
+    @@media (max-width: 992px) {
+        .head-line {
+            font-size: 14px;
+        }
+
+        .con {
+            top: 428px;
+        }
+
+        .img-card {
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .tit {
+            text-align: center;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 5px;
+            padding-top: 30px;
+            padding-bottom: 25px;
+        }
+
+        .titTop {
+            text-align: left;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 55px;
+            font-weight: 400;
+            font-family: 華康竹風體W4;
+            padding: 5px;
+            padding-bottom: 100px;
+            margin-top: 150px;
+            text-align: left;
+            right: 30px;
+        }
+
+        .imgst {
+            width: 100%;
+            height: 380px !important;
+        }
+        <!-- -->
+        .contact {
+            display: block;
+            float: none;
+            margin-top: 10px;
+        }
+
+        .social {
+            width: 36px;
+            height: 36px;
+        }
+
+        .view {
+            width: 100%;
+        }
+
+        .main {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="fh5co-cards">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            @foreach (var i in Model)
+            {
+           
+
+                <div class="col-lg-4 col-md-6 col-sm-6 animate-box">
+                    <a class="fh5co-card" target="_blank"  href="@Url.Action("GetImageFile","lesson", new { fileName= i.Image })" >
+                        <img  src="@Url.Action("GetImageFile","lesson", new { fileName= i.Image })"  class="img-responsive  imgst">
+                        <div class="fh5co-card-body">
+                            <h3>@i.Description</h3>
+                            @*<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>*@
+                        </div>
+                    </a>
+                </div>
+
+
+            }
+
+
+            @*<div class="col-lg-4 col-md-6 col-sm-6 animate-box">
+            <a class="fh5co-card" href="#">
+                <img src="~/Content/img/heigh/01.png" alt="Free HTML5 Bootstrap template" class="img-responsive  imgst">
+                <div class="fh5co-card-body">
+                    <h3>Web Developer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 animate-box">
+            <a class="fh5co-card" href="#">
+                <img src="~/Content/img/heigh/02.png" alt="Free HTML5 Bootstrap template" class="img-responsive imgst">
+                <div class="fh5co-card-body">
+                    <h3>User Experience</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 animate-box">
+            <a class="fh5co-card" href="#">
+                <img src="~/Content/img/heigh/03.png" alt="Free HTML5 Bootstrap template" class="img-responsive imgst">
+                <div class="fh5co-card-body">
+                    <h3>Web Designer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 animate-box">
+            <a class="fh5co-card" href="#">
+                <img src="~/Content/img/heigh/04.png" alt="Free HTML5 Bootstrap template" class="img-responsive imgst">
+                <div class="fh5co-card-body">
+                    <h3>Web Analyst</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt porro delectus cum officia magnam.</p>
+                </div>
+            </a>
+        </div>*@
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+    $(function () {
+        $(".tit").text("國三升高一課程");
+    })
+    function ContactSend() {
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+</script>

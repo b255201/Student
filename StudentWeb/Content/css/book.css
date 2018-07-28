@@ -25,8 +25,8 @@
 
     .img-card>img{height:550px;  }
 
-    .tit{text-align:center;color: black;letter-spacing: 2.5px;font-size: 52px;font-weight: 400; font-family: 華康竹風體W4;padding: 70px;}
-    .titTop{margin-left:100px; ; text-align:left;color: white;letter-spacing: 2.5px;font-size: 75px;font-weight: 400; font-family: 華康竹風體W4;
+    .tit{text-align:center;color: white;letter-spacing: 2.5px;font-size: 28px;font-weight: 800; font-family: 華康竹風體W4;padding-top: 30px;}
+    .titTop{margin-left:100px;  text-align:left;color: white;letter-spacing: 2.5px;font-size: 75px;font-weight: 400; font-family: 華康竹風體W4;
      padding: 5px;padding-top: 150px;padding-right: 50px;margin-top: 110px;}
 
 
@@ -81,6 +81,13 @@
     }
 }   */
 
+.booktit {
+    padding: 5px 10px
+}
+.bookborder {
+    border :5px solid red;
+}
+
 
 @media (max-width: 992px)
 {
@@ -95,7 +102,7 @@
         padding: 20px;
         margin-bottom: 20px;
     }
- .tit{text-align:center;color: black;letter-spacing: 2.5px;font-size: 45px;font-weight: 400; font-family: 華康竹風體W4;
+ .tit{text-align:center;color: white;letter-spacing: 2.5px;font-size: 28px;font-weight: 800; font-family: 華康竹風體W4;
      padding: 5px;padding-top: 30px;
     }
     .titTop{text-align:left;color: white;letter-spacing: 2.5px;font-size:55px;font-weight: 400; font-family: 華康竹風體W4;
