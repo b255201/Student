@@ -35,7 +35,9 @@ namespace StudentWeb.Controllers
         }
         public ActionResult GetImageFile(string fileName)
         {
-            return File("C:/後台/StudentBack/StudentBack/Image/JuniorHigh_School/" + fileName, "image/png");
+            // return File("C:/後台/StudentBack/StudentBack/Image/JuniorHigh_School/" + fileName, "image/png");
+            return File("C:/back/Image/JuniorHigh_School/" + fileName, "image/png");
+           
         }
     }
 }

@@ -163,7 +163,7 @@
 .news-card {
     text-align: center;
     padding: 2px; /*box-shadow: 0 13px 29px 0 rgba(0, 0, 0, 0.15);*/
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     -moz-transition: box-shadow 200ms;
     -o-transition: box-shadow 200ms;
     -webkit-transition: box-shadow 200ms;
@@ -363,5 +363,6 @@
     #ContactForm {
     width:100%;
     }
+
 }
 

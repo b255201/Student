@@ -1,9 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/Index_Layout.cshtml";
 }
+@model List<StudentWeb.Models.Activity_Message>
+
+
 <style>
     .img-news {
-        box-shadow: 0 16px 8px 0 rgba(0,0,0,0.16),0 8px 16px 0 rgba(0,0,0,0.12)
+        /* box-shadow: 0 16px 8px 0 rgba(0,0,0,0.16),0 8px 16px 0 rgba(0,0,0,0.12);*/
+        background-color: #ffffff;
+        box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
+        padding: 10px;
     }
 
     .w3-teal, .w3-hover-teal:hover {
@@ -17,83 +23,106 @@
         display: table;
         clear: both
     }
+
     #newtit {
         padding-top: 20px;
         font-weight: 700;
         color: darkslategrey;
     }
+
     ul {
-        font-size:18px;
+        font-size: 18px;
     }
-    ul > li {
-        color:red;
-        margin-top:5px
-    }
-        ul > li > a {
-            color: whitesmoke;
-            font-size:12px;
+
+        ul > li {
+            color: red;
+            margin-top: 5px
         }
-        ul > li > a:hover {
-            color: blue
-        }
+
+            ul > li > a {
+                color: whitesmoke;
+                font-size: 12px;
+            }
+
+                ul > li > a:hover {
+                    color: blue
+                }
+ 
+
     @@media (max-width: 992px) {
         #newtit {
             margin-top: -60px !important;
         }
+        /*.img-href {
+            margin-left: -500px !important;
+            margin-right: -500px !important;
+            padding-left: -15px !important;
+            padding-right: -15px !important;
+        }*/
+
     }
-
-    
-
-
 </style>
 
 
 <div class=" w3-teal" style="height:80px;">
     <h1 style="padding-top:20px;padding-left:35px;">活動消息</h1>
 </div>
-<div class="col-md-12">
+<div class="col-md-12" style="background-color:	whitesmoke">
 
-    <div class="row" style="margin-top:10px">
-        <a href="~/Content/img/DM/小高一LINE_P20180420_16452233.jpg" target="_blank" class="col-md-4">
-            <div class="news-card ">
-                <img id="myImg1" data-cid="1" class="img-news" src="~/Content/img/DM/小高一LINE_P20180420_16452233.jpg">
-            </div>
-        </a>
+    <div class="row" style="padding-top:10px;text-align:center">
 
-        <a href="~/Content/img/DM/國七升國八LINE_P20180425_15585486.jpg" target="_blank" class="col-md-4">
-            <div class="news-card ">
-                <img id="myImg2" data-cid="2" class="img-news" src="~/Content/img/DM/國七升國八LINE_P20180425_15585486.jpg">
-            </div>
-        </a>
+        @foreach (var i in Model)
+        {
+            <a href="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })" target="_blank" class="kd-md-4"  >
+                <div class="news-card ">
+                    <img id="myImg1" data-cid="1" class="img-news" src="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })">
+                </div>
+            </a>
 
-        <a href="~/Content/img/DM/國八升國九LINE_P20180320_16140511.jpg" target="_blank" class="col-md-4">
-            <div class="news-card">
-                <img id="myImg3" class="img-news" data-cid="3" src="~/Content/img/DM/國八升國九LINE_P20180320_16140511.jpg">
-            </div>
-        </a>
-        <a href="~/Content/img/DM/誠徵英文老師LINE_P20180309_15354812.jpg" target="_blank" class="col-md-4">
-            <div class="news-card ">
-                <img id="myImg4" class="img-news" data-cid="4" src="~/Content/img/DM/誠徵英文老師LINE_P20180309_15354812.jpg">
-            </div>
-        </a>
-        <a href="~/Content/img/DM/劉毅英文高三招生簡章_20180409_180428_0002.jpg" target="_blank" class="col-md-4">
-            <div class="news-card ">
-                <img id="myImg5" class="img-news" data-cid="5" src="~/Content/img/DM/劉毅英文高三招生簡章_20180409_180428_0002.jpg">
-            </div>
-        </a>
+        }
 
-        <a href="~/Content/img/DM/劉毅英文歡慶50週年LINE_P20180316_11262505.jpg" target="_blank" class="col-md-4">
-            <div class="news-card ">
-                <img id="myImg6" class="img-news" data-cid="6" src="~/Content/img/DM/劉毅英文歡慶50週年LINE_P20180316_11262505.jpg">
-            </div>
-        </a>
+
+
+        @*<a href="~/Content/img/DM/小高一LINE_P20180420_16452233.jpg" target="_blank" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg1" data-cid="1" class="img-news" src="~/Content/img/DM/小高一LINE_P20180420_16452233.jpg">
+                </div>
+            </a>
+
+            <a href="~/Content/img/DM/國七升國八LINE_P20180425_15585486.jpg" target="_blank" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg2" data-cid="2" class="img-news" src="~/Content/img/DM/國七升國八LINE_P20180425_15585486.jpg">
+                </div>
+            </a>
+
+            <a href="~/Content/img/DM/國八升國九LINE_P20180320_16140511.jpg" target="_blank" class="col-md-4">
+                <div class="news-card">
+                    <img id="myImg3" class="img-news" data-cid="3" src="~/Content/img/DM/國八升國九LINE_P20180320_16140511.jpg">
+                </div>
+            </a>
+            <a href="~/Content/img/DM/誠徵英文老師LINE_P20180309_15354812.jpg" target="_blank" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg4" class="img-news" data-cid="4" src="~/Content/img/DM/誠徵英文老師LINE_P20180309_15354812.jpg">
+                </div>
+            </a>
+            <a href="~/Content/img/DM/劉毅英文高三招生簡章_20180409_180428_0002.jpg" target="_blank" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg5" class="img-news" data-cid="5" src="~/Content/img/DM/劉毅英文高三招生簡章_20180409_180428_0002.jpg">
+                </div>
+            </a>
+
+            <a href="~/Content/img/DM/劉毅英文歡慶50週年LINE_P20180316_11262505.jpg" target="_blank" class="col-md-4">
+                <div class="news-card ">
+                    <img id="myImg6" class="img-news" data-cid="6" src="~/Content/img/DM/劉毅英文歡慶50週年LINE_P20180316_11262505.jpg">
+                </div>
+            </a>*@
     </div>
 </div>
 
 
 <div class="col-md-5 photo-block">
     <img src="~/Content/img/liu-Yi.png" />
-    <h2  style="font-weight:800;text-align:left;color:white">劉毅</h2>
+    <h2 style="font-weight:800;text-align:left;color:white">劉毅</h2>
     <div class="introLiu">1971年 劉毅老師發明「模考制度」，開始在台南一中對面的天主堂教英文。由八位同學開始教起。現在台大醫院副院長王主科教授就是當時的學生。</div>
     <div class="introLiu">1972年 「劉毅英文」有四位同學考上台大醫科，陳耀楨為榜道。</div>
     <div class="introLiu">1974年 「劉毅英文」轉戰台北，第一天只有一位同學，但劉毅老師仍然拼命上課，從此學生人數不斷增加。</div>
@@ -110,11 +139,11 @@
     <div class="activity-content">
 
         <div class="activity-title col-md-12">
-         
+
 
             <div class="imglist">
                 <h2 id="newtit"> 最新消息</h2>
-                <hr/>
+                <hr />
                 <ul>
                     <li><a>TOEIC新制多益課程︰所有保證班班系學員，一次繳費，上到考取保證的分數為止，每年需要參加一次測驗，考取證照前，決不額外收費。</a></li>
                     <li><a>高效英語會話︰想自助旅行卻擔心英文無法與人溝通？菜單看不懂？害怕迷路？常常想跟朋友聊最新用語卻不知如何開口？想玩寶可夢卻看不懂使用說明？快加入劉毅英文你想要的會話主題通通有！也不怕時間太忙有學費划不來的狀況！上課時間︰時間彈性，憑課堂券上課，可邀請親朋好友一起上課且不限期限。上課特色︰互動式教學，注重學員，個別的學習。</a></li>
@@ -146,7 +175,7 @@
 
 
     <div class="contactword">
-        聯絡我們
+        預約試聽
 
     </div>
 
@@ -176,13 +205,13 @@
         <div class="form-group" style="text-align:left">
             <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Phone">手機:</label>
             <div class="col-sm-9">
-                <input type="email" class="form-control" id="Phone" placeholder="手機(電話或手機選一)" name="Phone">
+                <input type="text" class="form-control" id="Phone" placeholder="手機(電話或手機選一)" onkeypress='if (event.keyCode!=46 && (event.keyCode < 48 || event.keyCode > 57)) event.returnValue=false' name="Phone">
             </div>
         </div>
         <div class="form-group" style="text-align:left">
             <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="LocalPhone">電話:</label>
             <div class="col-sm-9">
-                <input type="email" class="form-control" id="LocalPhone" placeholder="電話(電話或手機選一)" name="LocalPhone">
+                <input type="text" class="form-control" id="LocalPhone" placeholder="電話(電話或手機選一)" onkeypress='if (event.keyCode!=46 && (event.keyCode < 48 || event.keyCode > 57)) event.returnValue=false' name="LocalPhone">
             </div>
         </div>
         <div class="form-group" style="text-align:left">
@@ -215,47 +244,75 @@
     }
 
 </div>
+    <div class="clear"></div>
 
-<script>
-    $(function () {
-        $("body").on("click", "#pretrial", pretrial);
-    })
-    function pretrial()
-    {
-   
-        $('html, body').animate({
-            scrollTop: $("#Contactdiv").offset().top
-        }, 2000);
-    }
-    function ContactSend() {
-        if ($("#name").val().trim() == "") {
-            alert("請填寫姓名");
-            return false;
+
+    <script>
+        $(function () {
+            $("body").on("click", "#pretrial", pretrial);
+        })
+        function pretrial() {
+
+            $('html, body').animate({
+                scrollTop: $("#Contactdiv").offset().top
+            }, 2000);
         }
-        if ($("#Phone").val().trim() == "") {
-            if ($("#LocalPhone").val().trim() == "") {
-                alert("電話或手機請選擇一樣填寫");
+        function ContactSend() {
+
+            if ($("#name").val().trim() == "") {
+                alert("請填寫姓名");
                 return false;
             }
 
-        }
-
-        $.ajax({
-            url: "/Liu/InsertContact",
-            type: "POST",
-            data: $("#ContactForm").serialize(),
-            success: function (data) {
-                if (data.Status == "0") {
-                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
-
-                } else {
-                    var message = data.StatusDesc;
-                    alert(message);
+            if ($("#email").val().trim() != "") {
+                var emailRule = /^\w+((-\w+)|(\.\w+))*\@@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+                if (emailRule.test($("#email").val()) == false) {
+                    alert("信箱格式有誤,請檢查");
+                    return false;
                 }
-            },
-            error: function (err) {
-                alert(err.Status);
             }
-        });
-    }
-</script>
+
+            if ($("#Phone").val().trim() == "") {
+                if ($("#LocalPhone").val().trim() == "") {
+                    alert("電話或手機請選擇一樣填寫");
+                    return false;
+                }
+            }
+
+            if ($("#Phone").val().trim() != "") {
+                var Phone = $("#Phone").val().trim();
+                Phone = Phone.replace(/\s+/g, "").length;
+                if (Phone != "10") {
+                    alert("手機請填寫10碼,請檢查");
+                    return false;
+                }
+            }
+
+            if ($("#LocalPhone").val().trim() != "") {
+                var LocalPhone = $("#LocalPhone").val().trim();
+                LocalPhone = LocalPhone.replace(/\s+/g, "").length;
+                if (LocalPhone < "8") {
+                    alert("電話至少8碼,請檢查");
+                    return false;
+                }
+            }
+
+            $.ajax({
+                url: "/Liu/InsertContact",
+                type: "POST",
+                data: $("#ContactForm").serialize(),
+                success: function (data) {
+                    if (data.Status == "0") {
+                        alert("\n訊息：送出成功，我們會盡快聯繫您！");
+
+                    } else {
+                        var message = data.StatusDesc;
+                        alert(message);
+                    }
+                },
+                error: function (err) {
+                    alert(err.Status);
+                }
+            });
+        }
+    </script>

@@ -181,7 +181,7 @@
 
 
             <div style="text-align:center" class='col-sm-12'>
-                @Html.PagedListPager(Model, Page => Url.Action("High_school", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                @Html.PagedListPager(Model, Page => Url.Action("junior_school", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
             </div>
         </div>
     </div>
@@ -194,19 +194,48 @@
 
     <script>
         $(function () {
-            $(".tit").text("國三升高一課程");
+            $(".tit").text("國中書籍");
         })
         function ContactSend() {
+
             if ($("#name").val().trim() == "") {
                 alert("請填寫姓名");
                 return false;
             }
+
+            if ($("#email").val().trim() != "") {
+                var emailRule = /^\w+((-\w+)|(\.\w+))*\@@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+                if (emailRule.test($("#email").val()) == false) {
+                    alert("信箱格式有誤,請檢查");
+                    return false;
+                }
+            }
+
             if ($("#Phone").val().trim() == "") {
                 if ($("#LocalPhone").val().trim() == "") {
                     alert("電話或手機請選擇一樣填寫");
                     return false;
                 }
             }
+
+            if ($("#Phone").val().trim() != "") {
+                var Phone = $("#Phone").val().trim();
+                Phone = Phone.replace(/\s+/g, "").length;
+                if (Phone != "10") {
+                    alert("手機請填寫10碼,請檢查");
+                    return false;
+                }
+            }
+
+            if ($("#LocalPhone").val().trim() != "") {
+                var LocalPhone = $("#LocalPhone").val().trim();
+                LocalPhone = LocalPhone.replace(/\s+/g, "").length;
+                if (LocalPhone < "8") {
+                    alert("電話至少8碼,請檢查");
+                    return false;
+                }
+            }
+
             $.ajax({
                 url: "/Liu/InsertContact",
                 type: "POST",
@@ -214,6 +243,7 @@
                 success: function (data) {
                     if (data.Status == "0") {
                         alert("\n訊息：送出成功，我們會盡快聯繫您！");
+
                     } else {
                         var message = data.StatusDesc;
                         alert(message);

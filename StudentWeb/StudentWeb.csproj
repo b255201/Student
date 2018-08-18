@@ -166,6 +166,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\lessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
+    <Compile Include="Models\Activity_Message.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\elementary_Book.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>

@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="StudentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity_Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="title" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="elementary_Book">
           <Key>
             <PropertyRef Name="Id" />
@@ -129,6 +138,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="StudentModelStoreContainer">
+          <EntitySet Name="Activity_Message" EntityType="Self.Activity_Message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="elementary_Book" EntityType="Self.elementary_Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employeeCategory" EntityType="Self.employeeCategory" Schema="dbo" store:Type="Tables" />
@@ -190,6 +200,7 @@
           <EntitySet Name="elementary_Book" EntityType="StudentModel.elementary_Book" />
           <EntitySet Name="High_Book" EntityType="StudentModel.High_Book" />
           <EntitySet Name="junior_Book" EntityType="StudentModel.junior_Book" />
+          <EntitySet Name="Activity_Message" EntityType="StudentModel.Activity_Message" />
         </EntityContainer>
         <EntityType Name="employee">
           <Key>
@@ -307,6 +318,15 @@
           <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Activity_Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -401,6 +421,16 @@
           <EntitySetMapping Name="junior_Book">
             <EntityTypeMapping TypeName="StudentModel.junior_Book">
               <MappingFragment StoreEntitySet="junior_Book">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Activity_Message">
+            <EntityTypeMapping TypeName="StudentModel.Activity_Message">
+              <MappingFragment StoreEntitySet="Activity_Message">
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

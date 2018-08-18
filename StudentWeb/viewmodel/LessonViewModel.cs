@@ -14,5 +14,7 @@ namespace StudenWeb.ViewModel
         public string Image { get; set; }
 
         public string title { get; set; }
+
+        public int SeqID { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace StudentWeb.Controllers
         {
             var pageNumber = page ?? 1;
             var q = Heigh.GetAll();
-            return View(q.ToList().ToPagedList(pageNumber, 10));          
+            return View(q.ToList().ToPagedList(pageNumber, 9));          
         }
 
         #endregion
@@ -39,7 +39,8 @@ namespace StudentWeb.Controllers
 
         public ActionResult GetImageHighBook(string fileName)
         {
-            return File("C:/後台/StudentBack/StudentBack/Image/High_Book/" + fileName, "image/png");
+            // return File("C:/後台/StudentBack/StudentBack/Image/High_Book/" + fileName, "image/png");
+            return File("C:/back/Image/High_Book/" + fileName, "image/png");
         }
 
         #region 國小書籍
@@ -47,7 +48,7 @@ namespace StudentWeb.Controllers
         {
             var pageNumber = page ?? 1;
             var q = elementary.GetAll();
-            return View(q.ToList().ToPagedList(pageNumber, 10));
+            return View(q.ToList().ToPagedList(pageNumber, 9));
         }
         #endregion
 
@@ -62,7 +63,8 @@ namespace StudentWeb.Controllers
 
         public ActionResult GetImageelementaryBook(string fileName)
         {
-            return File("C:/後台/StudentBack/StudentBack/Image/elementary_Book/" + fileName, "image/png");
+          //  return File("C:/後台/StudentBack/StudentBack/Image/elementary_Book/" + fileName, "image/png");
+            return File("C:/back/Image/elementary_Book/" + fileName, "image/png");
         }
 
         #region 國中書籍
@@ -70,7 +72,7 @@ namespace StudentWeb.Controllers
         {
             var pageNumber = page ?? 1;
             var q = junior.GetAll();
-            return View(q.ToList().ToPagedList(pageNumber, 10));
+            return View(q.ToList().ToPagedList(pageNumber, 9));
         }
         #endregion
 
@@ -84,7 +86,8 @@ namespace StudentWeb.Controllers
 
         public ActionResult GetImagejuniorBook(string fileName)
         {
-            return File("C:/後台/StudentBack/StudentBack/Image/junior_Book/" + fileName, "image/png");
+            // return File("C:/後台/StudentBack/StudentBack/Image/junior_Book/" + fileName, "image/png");
+            return File("C:/back/Image/junior_Book/" + fileName, "image/png");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using StudentWeb.Models;
+using StudenWeb.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace StudentWeb.Controllers
     {
         IRepository<FreeTrail> FreeTrails = new Repository<FreeTrail>();
         StudentEntities db = new StudentEntities();
+        private Repository<Activity_Message> Activity_Message = new Repository<Activity_Message>();
         // GET: Liu
         public ActionResult Index()
         {
-           // var q = db.FreeTrails.ToList();       
-            return View();
+            var q = Activity_Message.GetAll();
+            //var q = db.FreeTrails.ToList();       
+            return View(q.ToList());
         }
         [HttpPost]
         public ActionResult InsertContact(FormCollection form)
@@ -23,8 +26,15 @@ namespace StudentWeb.Controllers
             try
             {
                 FreeTrail f = new FreeTrail();
+    
                 var q = db.FreeTrails.ToList();
-                int seq = q.Count() + 1;
+                var result = (from Row in q
+                              select new LessonViewModel
+                              {
+                                  SeqID =Row.SeqID
+                              }).OrderByDescending(x => x.SeqID);
+                var MaxId = int.Parse(result.First().SeqID.ToString());
+                int seq = MaxId + 1;
                 f.SeqID = seq;
                 f.Name = form["Name"];
                 f.SchoolName = form["SchoolName"];
@@ -43,6 +53,11 @@ namespace StudentWeb.Controllers
                 throw;
             }
         
+        }
+        public ActionResult GetImageFile(string fileName)
+        {
+             return File("C:/後台/StudentBack/StudentBack/Image/LiuIndex/" + fileName, "image/png");
+           // return File("C:/back/Image/LiuIndex/" + fileName, "image/png");
         }
     }
 }

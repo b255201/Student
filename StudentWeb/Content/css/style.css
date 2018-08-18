@@ -1367,7 +1367,7 @@ input::-moz-focus-inner, input::-moz-focus-outer { border: 0; }
   .show-list ~ .third-menu { display: none; }
   .logo { width: 86px; height: 80px; background-size: 100%; }
   .slogan { margin: 0; padding-left: 50px; }
-  .slogan .slogan-main .slogan-big { font-size: 50px; line-height: 1.3; padding: 0;}
+  .slogan .slogan-main .slogan-big { font-size: 35px; line-height: 1.3; padding: 0;}
   .slogan .slogan-main .slogan-sub { font-size: 14px; line-height: 1.5; padding-left: 0; padding-top: 10px; }
   .quick-link { top: -174px; padding: 0 2px; }
   .quick-link a { text-align: center; width: 50%; padding: 0 2px 4px 2px; }
