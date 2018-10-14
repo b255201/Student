@@ -163,7 +163,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\DialogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JuniorLessonController.cs" />
     <Compile Include="Controllers\lessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
     <Compile Include="Models\Activity_Message.cs">
@@ -191,10 +193,16 @@
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IRepository.cs" />
+    <Compile Include="Models\JuniorClass.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\JuniorHigh_School.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\junior_Book.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LastNew.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Partial\elementary_Book.cs" />
@@ -222,6 +230,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="viewmodel\CourseViewModel.cs" />
     <Compile Include="viewmodel\LessonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -5584,6 +5593,7 @@
     <Content Include="Content\assets\pages\scripts\v,..min.js" />
     <Content Include="Content\assets\pages\scripts\widgets.js" />
     <Content Include="Content\assets\pages\scripts\widgets.min.js" />
+    <Content Include="Content\bootstrap-dialog.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\book.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -5817,6 +5827,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap-dialog.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -6242,6 +6253,11 @@
     <Content Include="Views\Book\elementary_schoolDetail.cshtml" />
     <Content Include="Views\Book\junior_schoolDetail.cshtml" />
     <Content Include="Views\Book\High_schoolDetail.cshtml" />
+    <Content Include="Views\Dialog\LastNewDialogPartial.cshtml" />
+    <Content Include="Views\JuniorLesson\juniorone.cshtml" />
+    <Content Include="Views\JuniorLesson\Index.cshtml" />
+    <Content Include="Views\JuniorLesson\Detail.cshtml" />
+    <Content Include="Views\Shared\lesson_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

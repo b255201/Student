@@ -86,6 +86,17 @@
           <Property Name="Image" Type="nvarchar" MaxLength="50" />
           <Property Name="title" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="JuniorClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Course" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="JuniorHigh_School">
           <Key>
             <PropertyRef Name="Id" />
@@ -93,6 +104,15 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="10" />
           <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LastNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="permission">
           <Key>
@@ -146,7 +166,9 @@
           <EntitySet Name="FreeTrail" EntityType="Self.FreeTrail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="High_Book" EntityType="Self.High_Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="junior_Book" EntityType="Self.junior_Book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JuniorClass" EntityType="Self.JuniorClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JuniorHigh_School" EntityType="Self.JuniorHigh_School" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LastNews" EntityType="Self.LastNews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="permission" EntityType="Self.permission" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_employee_employeeCategory" Association="Self.FK_employee_employeeCategory">
             <End Role="employeeCategory" EntitySet="employeeCategory" />
@@ -201,6 +223,8 @@
           <EntitySet Name="High_Book" EntityType="StudentModel.High_Book" />
           <EntitySet Name="junior_Book" EntityType="StudentModel.junior_Book" />
           <EntitySet Name="Activity_Message" EntityType="StudentModel.Activity_Message" />
+          <EntitySet Name="LastNews" EntityType="StudentModel.LastNew" />
+          <EntitySet Name="JuniorClasses" EntityType="StudentModel.JuniorClass" />
         </EntityContainer>
         <EntityType Name="employee">
           <Key>
@@ -327,6 +351,26 @@
           <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="LastNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="JuniorClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -434,6 +478,28 @@
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LastNews">
+            <EntityTypeMapping TypeName="StudentModel.LastNew">
+              <MappingFragment StoreEntitySet="LastNews">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JuniorClasses">
+            <EntityTypeMapping TypeName="StudentModel.JuniorClass">
+              <MappingFragment StoreEntitySet="JuniorClass">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

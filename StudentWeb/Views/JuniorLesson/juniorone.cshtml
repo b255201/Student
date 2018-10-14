@@ -1,0 +1,348 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/book_Layout.cshtml";
+}
+<link href="~/Content/css/templatemo-style.css" rel="stylesheet" />
+
+<style>
+    .pri_table_list {
+  border: 1px solid #ccc;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+  background: #fff;
+  margin: 5px;
+}
+
+
+.pri_table_list button {
+    background: #444 none repeat scroll 0 0;
+    border: 1px solid #444;
+    color: #fff;
+    margin-bottom: 20px;
+    padding: 5px 35px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+}
+
+
+
+
+.pri_table_list>h3 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 25px;
+  padding: 30px 0 20px;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+}
+
+.pri_table_list > h4 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    padding: 30px 5px 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    text-align:center;
+}
+
+
+
+.saleon {
+  background: #3EC1D5 none repeat scroll 0 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  left: -26px;
+  padding: 2px 25px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 16px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+}
+
+.pri_table_list>button:hover {
+  background-color: #fff;
+  border: 1px solid #333;
+  color: #333;
+}
+
+
+
+
+    .img-card > img {
+        height: 600px;
+        width: 540px;
+    }
+    <!-- -->
+    .view {
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+    .head {
+        padding: 30px 0px;
+        color: #ffffff;
+        background-color: #004444;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 175%;
+        display: inline-block;
+    }
+
+    .contact {
+        float: right;
+        display: inline-block;
+    }
+
+    .social {
+        margin: 0px 5px;
+    }
+
+
+    .main {
+        padding: 30px 0px;
+        background-color: #eeeeee;
+    }
+
+    .block {
+        width: 280px;
+        height: 280px;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        line-height: 40px;
+        background-color: #eeffff;
+        box-shadow: 0px 0px 5px #888888;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .block-head {
+        font-weight: bold;
+        font-size: 120%;
+    }
+
+    .block-main {
+        margin-top: 10px;
+    }
+
+    .tit {
+        text-align: center;
+        color: white;
+        letter-spacing: 2.5px;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 30px;
+    }
+
+    .imgst {
+        width: 100%;
+        height: 380px !important;
+    }
+
+
+
+    @@media (max-width: 992px) {
+        .head-line {
+            font-size: 14px;
+        }
+
+        .con {
+            top: 428px;
+        }
+
+        .img-card {
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .tit {
+            text-align: center;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 5px;
+            padding-top: 30px;
+            padding-bottom: 25px;
+        }
+
+        .titTop {
+            text-align: left;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 55px;
+            font-weight: 400;
+            font-family: 華康竹風體W4;
+            padding: 5px;
+            padding-bottom: 100px;
+            margin-top: 150px;
+            text-align: left;
+            right: 30px;
+        }
+
+        .imgst {
+            width: 100%;
+            height: 380px !important;
+        }
+        <!-- -->
+        .contact {
+            display: block;
+            float: none;
+            margin-top: 10px;
+        }
+
+        .social {
+            width: 36px;
+            height: 36px;
+        }
+
+        .view {
+            width: 100%;
+        }
+
+        .main {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="fh5co-cards">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col col-sm-4">
+                <ul class="nav nav-tabs nav-stacked text-center" role="tablist">
+                    <li role="presentation" class="active"><a href="#EightClass" aria-controls="EightClass" role="tab" data-toggle="tab">七年級課程</a></li>
+                    <li role="presentation"><a href="#NighClass" aria-controls="NighClass" role="tab" data-toggle="tab">九年級課程</a></li>
+                </ul>
+            </div>
+            <div class="col col-sm-8">
+                <div class="row tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="EightClass">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="pri_table_list active">
+
+                                    <h4>陳盈駿熱身賽連2年對巫師陳盈駿熱身賽連2年對巫師 </h4>
+                                    <button>詳細資訊</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="pri_table_list active">
+
+                                    <h4>陳盈駿熱</h4>
+                                    <button>詳細資訊</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="pri_table_list active">
+
+                                    <h4>陳盈駿熱身賽連2年對巫師 </h4>
+                                    <button>詳細資訊</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="pri_table_list active">
+
+                                    <h4>陳盈駿熱身賽連2年對巫師 </h4>
+                                    <button>詳細資訊</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+     
+                    <div role="tabpanel" class="tab-pane fade" id="NighClass">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="list-inline pull-right">
+                <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                <li><button type="button" class="btn btn-default next-step">Next</button></li>
+                <li><button type="button" class="btn btn-primary ">Save</button></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $(".tit").text("國中課程");
+    })
+    function ContactSend() {
+
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+
+        if ($("#email").val().trim() != "") {
+            var emailRule = /^\w+((-\w+)|(\.\w+))*\@@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+            if (emailRule.test($("#email").val()) == false) {
+                alert("信箱格式有誤,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() != "") {
+            var Phone = $("#Phone").val().trim();
+            Phone = Phone.replace(/\s+/g, "").length;
+            if (Phone != "10") {
+                alert("手機請填寫10碼,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#LocalPhone").val().trim() != "") {
+            var LocalPhone = $("#LocalPhone").val().trim();
+            LocalPhone = LocalPhone.replace(/\s+/g, "").length;
+            if (LocalPhone < "8") {
+                alert("電話至少8碼,請檢查");
+                return false;
+            }
+        }
+
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+</script>

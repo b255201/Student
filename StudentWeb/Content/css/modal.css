@@ -351,11 +351,14 @@
         margin-left: 50px;
     }
     .photo-block {
-        height: 795px;
+        height: 800px;
+     
+      
     }
     .slide-block {
-       height:700px;
-        }
+        height:auto;
+        padding-bottom:5px;
+    }
  
 }
 /*****/

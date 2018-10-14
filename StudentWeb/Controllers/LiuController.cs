@@ -1,4 +1,5 @@
-﻿using StudentWeb.Models;
+﻿using PagedList;
+using StudentWeb.Models;
 using StudenWeb.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,17 @@ namespace StudentWeb.Controllers
         IRepository<FreeTrail> FreeTrails = new Repository<FreeTrail>();
         StudentEntities db = new StudentEntities();
         private Repository<Activity_Message> Activity_Message = new Repository<Activity_Message>();
+        private Repository<StudentWeb.Models.LastNew> LastNew = new Repository<StudentWeb.Models.LastNew>();
         // GET: Liu
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var q = Activity_Message.GetAll();
-            //var q = db.FreeTrails.ToList();       
-            return View(q.ToList());
+            //活動消息
+            var q = Activity_Message.GetAll().OrderByDescending(c=>c.Id);
+            ViewBag.Activity = q.ToList();
+            //最新消息
+            var pageNumber = page ?? 1;
+            var L = LastNew.GetAll().OrderByDescending(c => c.Id); 
+            return View(L.ToList().ToPagedList(pageNumber, 9));
         }
         [HttpPost]
         public ActionResult InsertContact(FormCollection form)
@@ -56,8 +62,10 @@ namespace StudentWeb.Controllers
         }
         public ActionResult GetImageFile(string fileName)
         {
-             return File("C:/後台/StudentBack/StudentBack/Image/LiuIndex/" + fileName, "image/png");
-           // return File("C:/back/Image/LiuIndex/" + fileName, "image/png");
+            //  return File("C:/後台/StudentBack/StudentBack/Image/LiuIndex/" + fileName, "image/png");
+            return File("C:/back/Image/LiuIndex/" + fileName, "image/png");
         }
+
+
     }
 }
