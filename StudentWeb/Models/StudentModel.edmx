@@ -14,6 +14,28 @@
           <Property Name="Image" Type="nvarchar" MaxLength="50" />
           <Property Name="title" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="AdultClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Course" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChildClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Course" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="elementary_Book">
           <Key>
             <PropertyRef Name="Id" />
@@ -76,6 +98,17 @@
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Image" Type="nvarchar" MaxLength="50" />
           <Property Name="title" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HighClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Course" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="junior_Book">
           <Key>
@@ -159,12 +192,15 @@
         </Association>
         <EntityContainer Name="StudentModelStoreContainer">
           <EntitySet Name="Activity_Message" EntityType="Self.Activity_Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdultClass" EntityType="Self.AdultClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChildClass" EntityType="Self.ChildClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="elementary_Book" EntityType="Self.elementary_Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employeeCategory" EntityType="Self.employeeCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employeeCategoryDetails" EntityType="Self.employeeCategoryDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FreeTrail" EntityType="Self.FreeTrail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="High_Book" EntityType="Self.High_Book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HighClass" EntityType="Self.HighClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="junior_Book" EntityType="Self.junior_Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JuniorClass" EntityType="Self.JuniorClass" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="JuniorHigh_School" EntityType="Self.JuniorHigh_School" Schema="dbo" store:Type="Tables" />
@@ -225,6 +261,9 @@
           <EntitySet Name="Activity_Message" EntityType="StudentModel.Activity_Message" />
           <EntitySet Name="LastNews" EntityType="StudentModel.LastNew" />
           <EntitySet Name="JuniorClasses" EntityType="StudentModel.JuniorClass" />
+          <EntitySet Name="AdultClasses" EntityType="StudentModel.AdultClass" />
+          <EntitySet Name="ChildClasses" EntityType="StudentModel.ChildClass" />
+          <EntitySet Name="HighClasses" EntityType="StudentModel.HighClass" />
         </EntityContainer>
         <EntityType Name="employee">
           <Key>
@@ -371,6 +410,39 @@
           <Property Name="Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="AdultClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ChildClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="HighClass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -495,6 +567,42 @@
           <EntitySetMapping Name="JuniorClasses">
             <EntityTypeMapping TypeName="StudentModel.JuniorClass">
               <MappingFragment StoreEntitySet="JuniorClass">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdultClasses">
+            <EntityTypeMapping TypeName="StudentModel.AdultClass">
+              <MappingFragment StoreEntitySet="AdultClass">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChildClasses">
+            <EntityTypeMapping TypeName="StudentModel.ChildClass">
+              <MappingFragment StoreEntitySet="ChildClass">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HighClasses">
+            <EntityTypeMapping TypeName="StudentModel.HighClass">
+              <MappingFragment StoreEntitySet="HighClass">
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="Course" ColumnName="Course" />
                 <ScalarProperty Name="Image" ColumnName="Image" />

@@ -37,5 +37,8 @@ namespace StudentWeb.Models
         public virtual DbSet<Activity_Message> Activity_Message { get; set; }
         public virtual DbSet<LastNew> LastNews { get; set; }
         public virtual DbSet<JuniorClass> JuniorClasses { get; set; }
+        public virtual DbSet<AdultClass> AdultClasses { get; set; }
+        public virtual DbSet<ChildClass> ChildClasses { get; set; }
+        public virtual DbSet<HighClass> HighClasses { get; set; }
     }
 }

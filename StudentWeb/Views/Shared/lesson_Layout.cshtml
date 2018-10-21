@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/Content/css/style.css?1991" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
             integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
             crossorigin="anonymous"></script>
@@ -23,55 +24,88 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <link href="~/Content/css/modal.css?1991" rel="stylesheet" />
+    <link href="~/Content/css/NavBar.css?20180901" rel="stylesheet" />
 </head>
 
 
 
 <body>
-
     <header class="header container1">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">劉毅英文</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-        <nav class="navbar-inverse">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" style="font-size:18px;">劉毅英文</a>
-            </div>
-            <!-- Collection of nav links, forms, and other content for toggling -->
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li ><a href="~/Liu/Index" style="font-size:18px;">首頁</a></li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="font-size:18px;">課程介紹<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
 
-                            <li><a href="~/JuniorLesson/Index" style="font-size:18px;">國中部</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="~/Liu/Index" style="font-size:18px;color:white">首頁</a></li>
+                        <li class="dropdown">
+                            <a style="font-size:18px;" href="#" class="dropdown-toggle" data-toggle="dropdown">課程介紹 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/ChildLesson/Index" style="font-size:18px;">兒童部</a></li>
+                                <li><a href="~/JuniorLesson/Index" style="font-size:18px;">國中部</a></li>
+                                <li><a href="~/HighLesson/Index" style="font-size:18px;">高中部</a></li>
+                                <li><a href="~/AdultLesson/Index" style="font-size:18px;">成人部</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a style="font-size:18px;" href="#" class="dropdown-toggle" data-toggle="dropdown">教材介紹 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Book/elementary_school" style="font-size:18px;">國小書籍</a></li>
+                                <li><a href="~/Book/junior_school" style="font-size:18px;">國中書籍</a></li>
+                                <li><a href="~/Book/High_school" style="font-size:18px;">高中書籍</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://www.learnbook.com.tw/" target="_blank" style="font-size:18px;color:white">學習出版社</a></li>
 
-                            <!-- <li class="divider"></li>
-    <li><a href="#">Trash</a></li>-->
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="font-size:18px;">教材介紹<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="~/Book/elementary_school" style="font-size:18px;">國小書籍</a></li>
-                            <li><a href="~/Book/junior_school" style="font-size:18px;">國中書籍</a></li>
-                            <li><a href="~/Book/High_school" style="font-size:18px;">高中書籍</a></li>
-                            <!-- <li class="divider"></li>
-                <li><a href="#">Trash</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right " >
-                    <li class="active"><a href="http://www.learnbook.com.tw/" style="font-size:18px;color:white">學習出版社</a></li>
-                </ul>
-            </div>
+
+                        @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                            <ul id="login-dp" class="dropdown-menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            Auction Portal Login
+                                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                    <div class="help-block text-right"><a href="">Reset password ?</a></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <div class="bottom text-center">
+                                            New here ? <a href="#"><b>Join</b></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>*@
+
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-collapse -->
         </nav>
+
 
 
     </header>

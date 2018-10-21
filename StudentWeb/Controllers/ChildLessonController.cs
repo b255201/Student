@@ -1,5 +1,4 @@
-﻿using PagedList;
-using StudentWeb.Models;
+﻿using StudentWeb.Models;
 using StudenWeb.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -9,10 +8,10 @@ using System.Web.Mvc;
 
 namespace StudentWeb.Controllers
 {
-    public class JuniorLessonController : Controller
+    public class ChildLessonController : Controller
     {
-        private Repository<JuniorClass> repo = new Repository<JuniorClass>();
-        // GET: JuniorLesson
+        private Repository<ChildClass> repo = new Repository<ChildClass>();
+        // GET: ChildLesson
         public ActionResult Index()
         {
             return View();
@@ -27,10 +26,6 @@ namespace StudentWeb.Controllers
             return Json(new { id = id, title = title }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult juniorone()
-        {
-            return View();
-        }
         public ActionResult Search()
         {
             var q = repo.GetAll().ToList();
@@ -47,7 +42,7 @@ namespace StudentWeb.Controllers
             return Json(result);
         }
 
-        #region 國中課程 Detail
+        #region 兒童課程 Detail
         [HttpGet]
         public ActionResult Detail(int Id = 1)
         {
@@ -58,14 +53,10 @@ namespace StudentWeb.Controllers
         }
         #endregion
         public ActionResult GetImageFile(string fileName)
-        {    
-           //  return File("C:/後台/StudentBack/StudentBack/Image/Junior_Lesson/" + fileName, "image/png");
-            return File("C:/back/Image/Junior_Lesson/" + fileName, "image/png");
+        {
+            //  return File("C:/後台/StudentBack/StudentBack/Image/Junior_Lesson/" + fileName, "image/png");
+            return File("C:/back/Image/Child_Lesson/" + fileName, "image/png");
 
         }
-
-
-
-
     }
 }

@@ -162,13 +162,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdultLessonController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\ChildLessonController.cs" />
     <Compile Include="Controllers\DialogController.cs" />
+    <Compile Include="Controllers\HighLessonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuniorLessonController.cs" />
-    <Compile Include="Controllers\lessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
     <Compile Include="Models\Activity_Message.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdultClass.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChildClass.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\elementary_Book.cs">
@@ -188,6 +196,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HighClass.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\High_Book.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
@@ -5599,6 +5610,7 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\modal.css" />
     <Content Include="Content\css\mystyle.css" />
+    <Content Include="Content\css\NavBar.css" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\templatemo-style.css" />
@@ -6217,7 +6229,6 @@
     </Content>
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\superfish.js" />
-    <Content Include="Views\lesson\High_school.cshtml" />
     <Content Include="Views\Book\High_school.cshtml" />
     <Content Include="Views\Book\elementary_school.cshtml" />
     <Content Include="Views\Book\junior_school.cshtml" />
@@ -6248,7 +6259,6 @@
     <Content Include="Views\Liu\Index.cshtml" />
     <Content Include="Views\Shared\Index_Layout.cshtml" />
     <Content Include="Views\Shared\book_Layout.cshtml" />
-    <Content Include="Views\lesson\test.cshtml" />
     <Content Include="Views\Shared\test_Layout.cshtml" />
     <Content Include="Views\Book\elementary_schoolDetail.cshtml" />
     <Content Include="Views\Book\junior_schoolDetail.cshtml" />
@@ -6258,6 +6268,12 @@
     <Content Include="Views\JuniorLesson\Index.cshtml" />
     <Content Include="Views\JuniorLesson\Detail.cshtml" />
     <Content Include="Views\Shared\lesson_Layout.cshtml" />
+    <Content Include="Views\HighLesson\Index.cshtml" />
+    <Content Include="Views\HighLesson\Detail.cshtml" />
+    <Content Include="Views\ChildLesson\Detail.cshtml" />
+    <Content Include="Views\ChildLesson\Index.cshtml" />
+    <Content Include="Views\AdultLesson\Index.cshtml" />
+    <Content Include="Views\AdultLesson\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

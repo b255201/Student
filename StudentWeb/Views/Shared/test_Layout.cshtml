@@ -1,587 +1,252 @@
 ﻿<!DOCTYPE html>
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
-Version: 4.7.5
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8" />
-    <title>Metronic Admin Theme #1 | Blog</title>
-    <link href="~/Content/css/mystyle.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/Content/css/mystyle.css" />
-    <link rel="stylesheet" href="~/Content/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/Content/css/book.css" />
+    <meta charset="UTF-8">
+    <link rel="icon" href="~/Content/img/logo_LE.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="8X0p4eGFT-vRR2KR76dcA8KN0T6wYHccBjS0pNpc3Pw" />
+    <meta property="og:title" content="劉毅英文補習班" />
+    <meta name="keywords" content="劉毅補習班,國中保證班,高中保證班,升大學補習班,升高中補習班,落點分析,學測班,全科班,衝刺班,劉毅英文補習班,英文補習班,國中英文班,國中全科班,高中英文班,高中全科班,成人美語班,兒童美語班,指考複習班,TOEIC多益" />
+    <title>劉毅英文</title>
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet" />
+
+    <link href="~/Content/css/bootstrap.css?20181020" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Content/css/style.css" />
+    <link href="~/Content/css/style.css?20181020" rel="stylesheet" />
+    <link href="~/Content/css/w3.css?20181020" rel="stylesheet" />
+
+    <script src="~/Content/js/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <link href="~/Content/css/modal.css" rel="stylesheet" />
 
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <link href="~/Content/css/modal.css?20180901" rel="stylesheet" />
 
+    <link href="~/Content/css/NavBar.css?20180901" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    @*<link src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/css/bootstrap-dialog.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.35.4/js/bootstrap-dialog.min.js"></script>*@
+    <link href="~/Content/bootstrap-dialog.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-dialog.js"></script>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Preview page of Metronic Admin Theme #1 for blog listing page" name="description" />
-    <meta content="" name="author" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="../Content/assets/global/css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
-    <link href="../Content/assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME GLOBAL STYLES -->
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href="../Content/assets/pages/css/blog.min.css" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL STYLES -->
-    <!-- BEGIN THEME LAYOUT STYLES -->
-    <link href="../Content/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="../Content/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME LAYOUT STYLES -->
-    <link rel="shortcut icon" href="favicon.ico" />
 </head>
-<!-- END HEAD -->
-@*<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">*@
+
+
+
 <body>
+
+    <!-- Global site tag (gtag.js) - Google Analytics
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123368065-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123368065-1');
+    </script>
+        -->
+
     <header class="header container1">
 
-        <nav class="navbar navbar-inverse">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="#" class="navbar-brand">劉毅英文</a>
-            </div>
-            <!-- Collection of nav links, forms, and other content for toggling -->
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="~/Liu/Index">首頁</a></li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">課程介紹<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" >劉毅英文</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                            <li><a href="~/lesson/High_school">國中升高中全科班</a></li>
 
-                            <!-- <li class="divider"></li>
-                            <li><a href="#">Trash</a></li>-->
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">教材介紹<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="~/Book/elementary_school">國小書籍</a></li>
-                            <li><a href="~/Book/junior_school">國中書籍</a></li>
-                            <li><a href="~/Book/High_school">高中書籍</a></li>
-                            <!-- <li class="divider"></li>
-                            <li><a href="#">Trash</a></li>-->
-                        </ul>
-                    </li>
-                </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="~/Liu/Index" style="font-size:18px;color:white">首頁</a></li>
+                        <li class="dropdown">
+                            <a style="font-size:18px;" href="#" class="dropdown-toggle" data-toggle="dropdown">課程介紹 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/ChildLesson/Index" style="font-size:18px;">兒童部</a></li>
+                                <li><a href="~/JuniorLesson/Index" style="font-size:18px;">國中部</a></li>
+                                <li><a href="~/HighLesson/Index" style="font-size:18px;">高中部</a></li>
+                                <li><a href="~/AdultLesson/Index" style="font-size:18px;">成人部</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a style="font-size:18px;" href="#" class="dropdown-toggle" data-toggle="dropdown">教材介紹 <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="~/Book/elementary_school" style="font-size:18px;">國小書籍</a></li>
+                                <li><a href="~/Book/junior_school" style="font-size:18px;">國中書籍</a></li>
+                                <li><a href="~/Book/High_school" style="font-size:18px;">高中書籍</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="http://www.learnbook.com.tw/"  target="_blank" style="font-size:18px;color:white">學習出版社</a></li>
 
-            </div>
+
+                        @*<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+            <ul id="login-dp" class="dropdown-menu">
+                <li>
+                    <div class="row">
+                        <div class="col-md-12">
+                            Auction Portal Login
+                            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                    <div class="help-block text-right"><a href="">Reset password ?</a></div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="bottom text-center">
+                            New here ? <a href="#"><b>Join</b></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>*@
+
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-collapse -->
         </nav>
+
+
     </header>
-    <div class="img-background">
-        <div class="slogan  titTop">
-            <!--高中課程-->
+
+    <div class="landing-background">
+        <div class="slogan container1">
+
+            <div class="slogan-main">
+                <div class="slogan-big">
+                    <a style="text-decoration:none;color:white">劉毅英文教育機構</a>
+
+                </div>
+
+            </div>
         </div>
-        <div class="full-image">
+        <div class="landing-background-video">
+            <video id="videoPlayer" style="display:block" muted playsinline loop="true" autoplay="autoplay" src="~/Content/img/liu.mp4" type="video/mp4"></video>
         </div>
     </div>
 
+    <div class="container1 main-content">
+        <div class="quick-link">
+            <a style="text-decoration:none;" href="~/ChildLesson/Index">
+                <div style="text-align: center"><span>兒童部</span></div>
+            </a>
+            <a style="text-decoration:none;" href="~/JuniorLesson/Index">
+                <div style="text-align: center"><span>國中部</span></div>
+            </a>
+            <a style="text-decoration:none;" href="~/HighLesson/Index">
+                <div style="text-align: center"> <span>高中部</span></div>
+            </a>
 
-
-
-    <div class="page-wrapper">
-
-        <!-- BEGIN CONTENT BODY -->
-        <div class="page-content">
-            <!-- BEGIN PAGE HEADER-->
-            <!-- BEGIN THEME PANEL -->
-            <div class="theme-panel hidden-xs hidden-sm">
-
-                <div class="theme-options">
-                    <div class="theme-option theme-colors clearfix">
-                        <span> THEME COLOR </span>
-                        <ul>
-                            <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
-                            <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="Dark Blue"> </li>
-                            <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
-                            <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
-                            <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
-                            <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true" data-original-title="Light 2"> </li>
-                        </ul>
-                    </div>
-                    <div class="theme-option">
-                        <span> Theme Style </span>
-                        <select class="layout-style-option form-control input-sm">
-                            <option value="square" selected="selected">Square corners</option>
-                            <option value="rounded">Rounded corners</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Layout </span>
-                        <select class="layout-option form-control input-sm">
-                            <option value="fluid" selected="selected">Fluid</option>
-                            <option value="boxed">Boxed</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Header </span>
-                        <select class="page-header-option form-control input-sm">
-                            <option value="fixed" selected="selected">Fixed</option>
-                            <option value="default">Default</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Top Menu Dropdown</span>
-                        <select class="page-header-top-dropdown-style-option form-control input-sm">
-                            <option value="light" selected="selected">Light</option>
-                            <option value="dark">Dark</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Sidebar Mode</span>
-                        <select class="sidebar-option form-control input-sm">
-                            <option value="fixed">Fixed</option>
-                            <option value="default" selected="selected">Default</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Sidebar Menu </span>
-                        <select class="sidebar-menu-option form-control input-sm">
-                            <option value="accordion" selected="selected">Accordion</option>
-                            <option value="hover">Hover</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Sidebar Style </span>
-                        <select class="sidebar-style-option form-control input-sm">
-                            <option value="default" selected="selected">Default</option>
-                            <option value="light">Light</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Sidebar Position </span>
-                        <select class="sidebar-pos-option form-control input-sm">
-                            <option value="left" selected="selected">Left</option>
-                            <option value="right">Right</option>
-                        </select>
-                    </div>
-                    <div class="theme-option">
-                        <span> Footer </span>
-                        <select class="page-footer-option form-control input-sm">
-                            <option value="fixed">Fixed</option>
-                            <option value="default" selected="selected">Default</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <!-- END THEME PANEL -->
-            <!-- BEGIN PAGE TITLE-->
-            <h1 class="page-title">
-                Blog
-                <small>blog listing page</small>
-            </h1>
-            <!-- END PAGE TITLE-->
-            <!-- END PAGE HEADER-->
-            <div class="blog-page blog-content-1">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="blog-post-lg bordered blog-container">
-                            <div class="blog-img-thumb">
-                                <a href="javascript:;">
-                                    <img src="../assets/pages/img/page_general_search/5.jpg" />
-                                </a>
-                            </div>
-                            <div class="blog-post-content">
-                                <h2 class="blog-title blog-post-title">
-                                    <a href="javascript:;">Metronic Blog Post</a>
-                                </h2>
-                                <p class="blog-post-desc">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                </p>
-                                <div class="blog-post-foot">
-                                    <ul class="blog-post-tags">
-                                        <li class="uppercase">
-                                            <a href="javascript:;">Bootstrap</a>
-                                        </li>
-                                        <li class="uppercase">
-                                            <a href="javascript:;">Sass</a>
-                                        </li>
-                                        <li class="uppercase">
-                                            <a href="javascript:;">HTML</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-post-meta">
-                                        <i class="icon-calendar font-blue"></i>
-                                        <a href="javascript:;">Oct 24, 2015</a>
-                                    </div>
-                                    <div class="blog-post-meta">
-                                        <i class="icon-bubble font-blue"></i>
-                                        <a href="javascript:;">14 Comments</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-post-lg bordered blog-container">
-                            <div class="blog-img-thumb">
-                                <a href="javascript:;">
-                                    <img src="../assets/pages/img/page_general_search/05.jpg" />
-                                </a>
-                            </div>
-                            <div class="blog-post-content">
-                                <h2 class="blog-title blog-post-title">
-                                    <a href="javascript:;">New Metronic Features</a>
-                                </h2>
-                                <p class="blog-post-desc">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                                </p>
-                                <div class="blog-post-foot">
-                                    <ul class="blog-post-tags">
-                                        <li class="uppercase">
-                                            <a href="javascript:;">Bootstrap</a>
-                                        </li>
-                                        <li class="uppercase">
-                                            <a href="javascript:;">Sass</a>
-                                        </li>
-                                        <li class="uppercase">
-                                            <a href="javascript:;">HTML</a>
-                                        </li>
-                                    </ul>
-                                    <div class="blog-post-meta">
-                                        <i class="icon-calendar font-blue"></i>
-                                        <a href="javascript:;">Oct 22, 2015</a>
-                                    </div>
-                                    <div class="blog-post-meta">
-                                        <i class="icon-bubble font-blue"></i>
-                                        <a href="javascript:;">8 Comments</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="blog-quote bordered blog-container">
-                                    <div class="blog-quote-label bg-green-jungle">
-                                        <i class="fa fa-quote-left"></i> Lorem ipsum dolore siat amet consectetuer adipiscing eliot sed diam nonummy nih siad euismod laoreet dolore
-                                    </div>
-                                    <div class="blog-quote-avatar">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/avatars/team12.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-quote-author">
-                                        <h3 class="blog-title blog-quote-title">
-                                            <a href="javascript:;">Rob Robson</a>
-                                        </h3>
-                                        <p class="blog-quote-desc">Senior Developer</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="blog-video bordered blog-container">
-                                    <div class="blog-img-thumb">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/page_general_search/4.jpg" />
-                                        </a>
-                                    </div>
-                                    <a href="javascript:;" class="blog-video-play">
-                                        <i class="fa fa-play"></i>
-                                    </a>
-                                    <div class="blog-video-content">
-                                        <h3 class="blog-title blog-video-title">
-                                            <a href="javascript:;">Awesome Video</a>
-                                        </h3>
-                                        <p class="blog-video-desc">Software</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="blog-banner blog-container" style="background-image:url(../assets/pages/img/background/7.jpg);">
-                                    <h2 class="blog-title blog-banner-title">
-                                        <a href="javascript:;">Metronic Latest Features</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="blog-post-sm bordered blog-container">
-                                    <div class="blog-img-thumb">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/page_general_search/1.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-post-content">
-                                        <h2 class="blog-title blog-post-title">
-                                            <a href="javascript:;">Metronic Blog Post</a>
-                                        </h2>
-                                        <p class="blog-post-desc"> Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy </p>
-                                        <div class="blog-post-foot">
-                                            <div class="blog-post-meta">
-                                                <i class="icon-calendar font-blue"></i>
-                                                <a href="javascript:;">Oct 24, 2015</a>
-                                            </div>
-                                            <div class="blog-post-meta">
-                                                <i class="icon-bubble font-blue"></i>
-                                                <a href="javascript:;">14 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="blog-post-sm bordered blog-container">
-                                    <div class="blog-img-thumb">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/page_general_search/02.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-post-content">
-                                        <h2 class="blog-title blog-post-title">
-                                            <a href="javascript:;">Metronic Blog Post</a>
-                                        </h2>
-                                        <p class="blog-post-desc"> Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy </p>
-                                        <div class="blog-post-foot">
-                                            <div class="blog-post-meta">
-                                                <i class="icon-calendar font-blue"></i>
-                                                <a href="javascript:;">Oct 24, 2015</a>
-                                            </div>
-                                            <div class="blog-post-meta">
-                                                <i class="icon-bubble font-blue"></i>
-                                                <a href="javascript:;">14 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="blog-post-sm bordered blog-container">
-                                    <div class="blog-img-thumb">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/page_general_search/2.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-post-content">
-                                        <h2 class="blog-title blog-post-title">
-                                            <a href="javascript:;">Metronic Blog Post</a>
-                                        </h2>
-                                        <p class="blog-post-desc"> Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy </p>
-                                        <div class="blog-post-foot">
-                                            <div class="blog-post-meta">
-                                                <i class="icon-calendar font-blue"></i>
-                                                <a href="javascript:;">Oct 24, 2015</a>
-                                            </div>
-                                            <div class="blog-post-meta">
-                                                <i class="icon-bubble font-blue"></i>
-                                                <a href="javascript:;">14 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="blog-post-sm bordered blog-container">
-                                    <div class="blog-img-thumb">
-                                        <a href="javascript:;">
-                                            <img src="../assets/pages/img/page_general_search/03.jpg" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-post-content">
-                                        <h2 class="blog-title blog-post-title">
-                                            <a href="javascript:;">Metronic Blog Post</a>
-                                        </h2>
-                                        <p class="blog-post-desc"> Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy </p>
-                                        <div class="blog-post-foot">
-                                            <div class="blog-post-meta">
-                                                <i class="icon-calendar font-blue"></i>
-                                                <a href="javascript:;">Oct 24, 2015</a>
-                                            </div>
-                                            <div class="blog-post-meta">
-                                                <i class="icon-bubble font-blue"></i>
-                                                <a href="javascript:;">14 Comments</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a style="text-decoration:none;" href="~/AdultLesson/Index">
+                <div style="text-align: center"><span>成人部</span></div>
+            </a>
+            @*<a>
+                    <div style="text-align: center"><span>成人美語班</span></div>
+                </a>
+                <a>
+                    <div style="text-align: center"><span>兒童美語班</span></div>
+                </a>*@
+            <div class="clear"></div>
         </div>
-        <!-- END CONTENT BODY -->
-    </div>
-    <!-- END CONTENT -->
-    @RenderBody()
 
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="col-md-4">
-                <select class="position-selector">
-                    <option value="1" selected>台北站前總公司</option>
-                </select>
+        @RenderBody()
 
-                <div>
-                    <div><i class="fa fa-map-marker fa-fw"></i><a style="text-decoration:none;" href="https://www.google.com.tw/maps/place/100%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E5%8D%80%E8%A8%B1%E6%98%8C%E8%A1%9717-1%E8%99%9F6F/@Html.Raw("@")25.0458258,121.5146382,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a972fed44ab7:0xa86945d9ac2afaba!8m2!3d25.0458258!4d121.5168269" target="_blank">台北市許昌街17號6F</a></div>
-                </div>
-                <br />
-                <div>
-                    <div><i class="fa fa-phone fa-fw"></i><span>02-23895212</span></div>
-                </div>
-                <br />
-                <div>
+
+        <footer class="footer">
+            <div class="footer-top">
+
+                <div class="col-md-4">
+                    <select class="position-selector">
+                        <option selected>劉毅英文教育機構台北站前補習班</option>
+                    </select>
                     <div>
-                        <i class="fa fa-clock-o fa-fw"></i>
-                        <span>星期一~日 08:00-22:00</span>
+
+                        <div><i class="fa fa-map-marker fa-fw"></i><a style="text-decoration:none;color:white " href="https://www.google.com.tw/maps/place/100%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E5%8D%80%E8%A8%B1%E6%98%8C%E8%A1%9717-1%E8%99%9F6F/@Html.Raw("@")25.0458258,121.5146382,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a972fed44ab7:0xa86945d9ac2afaba!8m2!3d25.0458258!4d121.5168269" target="_blank">台北市許昌街17號6F</a></div>
+                    </div>
+                    <br />
+                    <div>
+                        <div><i class="fa fa-phone fa-fw"></i><span style="color:white">02-23895212</span></div>
+                    </div>
+                    <br />
+                    <div>
+                        <div><i class="glyphicon glyphicon-hand-right"></i><a style="text-decoration:none;color:white" target="_blank" href="http://line.me/ti/p/%40frg3097b">&nbspLINE</a></div>
+                    </div>
+                    <br />
+                    <div>
+                        <div>
+                            <i class="fa fa-clock-o fa-fw"></i>
+                            <span style="color:white">星期一~五 15:00-21:30</span>
+
+                        </div>
+                        <br />
+                        <div>
+                            <i class="fa  fa-fw"></i>
+                            <span style="color:white">星期六~日 08:30-21:30</span>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <div class="col-md-4">
+                    <h3>地圖資訊</h3>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1807.326819310746!2d121.5157326!3d25.0458258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a900749e0f51%3A0xa08127e49c12b74a!2z5YqJ5q-F6Iux5paH5pWZ6IKy5qmf5qeL!5e0!3m2!1szh-TW!2stw!4v1534060441316" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <br />
+                </div>
+                <div class="col-md-4">
+                    <h3>連結資訊</h3>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/LIU-YI-English-School%E5%8A%89%E6%AF%85%E8%8B%B1%E6%96%87%E6%95%99%E8%82%B2%E6%A9%9F%E6%A7%8B-1800170896968255/" target="_blank"><i class="fa fa-facebook"></i></a>
                     </div>
                 </div>
-
+                <div class="clear"></div>
 
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <h3>連結資訊</h3>
-
-
-                <div class="social-media">
-                    <a href="https://www.facebook.com/%E5%8A%89%E6%AF%85%E8%8B%B1%E6%96%87%E6%95%99%E8%82%B2%E6%A9%9F%E6%A7%8B-1601253966833088/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <div class="footer-bottom">
+                <div class="copyright">Copyright © 2018 劉毅英文教育機構</div>
+                <div class="country-switcher">
+                    @*<img src="" width="25px" alt="">*@
+                    <span class="country-name">台灣</span>
 
                 </div>
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-        </div>
-        <div class="footer-bottom">
-            <div class="copyright">Copyright © 2018 劉毅補習班</div>
-            <div class="country-switcher">
-                <span class="country-name">台灣</span>
-            </div>
-            <div class="clear"></div>
-        </div>
 
-    </footer>
+        </footer>
+
+    </div>
 
     <div class="up-to-top">
         <i class="fa fa-angle-double-up fa-fw"></i>
     </div>
-    </div>  <footer class="footer">
-        <div class="footer-top">
-            <div class="col-md-4">
-                <select class="position-selector">
-                    <option value="1" selected>台北站前總公司</option>
-                </select>
+    <script data-align="right" data-overlay="false" id="keyreply-script" src="//keyreply.com/chat/widget.js" data-color="#E4392B" data-apps="JTdCJTIyZW1haWwlMjI6JTIybGVhcm42NjZAc2VlZG5ldC5uZXQudHclMjIlN0Q="></script>
 
-                <div>
-                    <div><i class="fa fa-map-marker fa-fw"></i><a style="text-decoration:none;" href="https://www.google.com.tw/maps/place/100%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E5%8D%80%E8%A8%B1%E6%98%8C%E8%A1%9717-1%E8%99%9F6F/@Html.Raw("@")25.0458258,121.5146382,17z/data=!3m1!4b1!4m5!3m4!1s0x3442a972fed44ab7:0xa86945d9ac2afaba!8m2!3d25.0458258!4d121.5168269" target="_blank">台北市許昌街17號6F</a></div>
-                </div>
-                <br />
-                <div>
-                    <div><i class="fa fa-phone fa-fw"></i><span>02-23895212</span></div>
-                </div>
-                <br />
-                <div>
-                    <div>
-                        <i class="fa fa-clock-o fa-fw"></i>
-                        <span>星期一~日 08:00-22:00</span>
-                    </div>
-                </div>
+    <script type="application/javascript">
+        var vid = document.getElementById("videoPlayer");
+        $(vid).trigger('play');
+        $(function(){
 
-
-            </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <h3>連結資訊</h3>
-
-
-                <div class="social-media">
-                    <a href="https://www.facebook.com/%E5%8A%89%E6%AF%85%E8%8B%B1%E6%96%87%E6%95%99%E8%82%B2%E6%A9%9F%E6%A7%8B-1601253966833088/" target="_blank"><i class="fa fa-facebook"></i></a>
-
-                </div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="footer-bottom">
-            <div class="copyright">Copyright © 2018 劉毅補習班</div>
-            <div class="country-switcher">
-                <span class="country-name">台灣</span>
-            </div>
-            <div class="clear"></div>
-        </div>
-
-    </footer>
-
-    <div class="up-to-top">
-        <i class="fa fa-angle-double-up fa-fw"></i>
-    </div>
-    </div>
+        });
 
 
 
-    <!-- END QUICK NAV -->
-    <!--[if lt IE 9]>
-    <script src="../assets/global/plugins/respond.min.js"></script>
-    <script src="../assets/global/plugins/excanvas.min.js"></script>
-    <script src="../assets/global/plugins/ie8.fix.min.js"></script>
-    <![endif]-->
-    <!-- BEGIN CORE PLUGINS -->
-    <script src="../Content/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-    <!-- END CORE PLUGINS -->
-    <!-- BEGIN THEME GLOBAL SCRIPTS -->
-    <script src="../Content/assets/global/scripts/app.min.js" type="text/javascript"></script>
-    <!-- END THEME GLOBAL SCRIPTS -->
-    <!-- BEGIN THEME LAYOUT SCRIPTS -->
-    <script src="../Content/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
-    <script src="../Content/assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
-    <!-- END THEME LAYOUT SCRIPTS -->
-    <script>
-        $(document).ready(function () {
-            $('#clickmewow').click(function () {
-                $('#radio1003').attr('checked', 'checked');
-            });
-        })
     </script>
 </body>
 </html>

@@ -945,8 +945,8 @@ button:focus { outline: none; }
 .landing-background-video video { margin: auto; position: absolute; z-index: -1; top: 55%; left: 50%; transform: translate(-50%, -50%); visibility: visible; min-width: 100%; min-height: 100%; }
 
 
-.quick-link { position: absolute; width: 100%; top: -90px; }
-.quick-link a { width: 16.6%; display: inline-block; float: left; text-decoration: none; opacity: 0; -moz-animation: flip 0.5s 1 ease-in-out 0.5s forwards; -webkit-animation: flip 0.5s 1 ease-in-out 0.5s forwards; animation: flip 0.5s 1 ease-in-out 0.5s forwards; }
+.quick-link { position: absolute; width: 100%; top: -63px }
+.quick-link a { width: 25%; display: inline-block; float: left; text-decoration: none; opacity: 0; -moz-animation: flip 0.5s 1 ease-in-out 0.5s forwards; -webkit-animation: flip 0.5s 1 ease-in-out 0.5s forwards; animation: flip 0.5s 1 ease-in-out 0.5s forwards; }
 .quick-link a div { margin-right: 1px; padding: 1rem; position: relative; z-index: 0; -moz-transition: background-color 200ms; -o-transition: background-color 200ms; -webkit-transition: background-color 200ms; transition: background-color 200ms; }
 .quick-link a div:before { content: ""; position: absolute; top: auto; right: 0; bottom: 0; left: 0; background-color: rgba(0, 0, 0, 0.4); height: 100px; max-height: 90px;; z-index: -1; -moz-animation: sqaure 0.4s 1 linear; -webkit-animation: sqaure 0.4s 1 linear; animation: sqaure 0.4s 1 linear; }
 .quick-link a div span { color: white; font-size: 28px;}
@@ -960,7 +960,12 @@ button:focus { outline: none; }
 .quick-link a:nth-child(5) { -moz-animation-delay: 1.3s; -webkit-animation-delay: 1.3s; animation-delay: 1.3s; }
 .quick-link a:nth-child(5) div:before { -moz-animation-delay: 1.3s; -webkit-animation-delay: 1.3s; animation-delay: 1.3s; }
 
-.counter-area { min-height: 400px; background: url("") no-repeat 50% top; }
+    
+
+.counter-area {
+    min-height: 400px;
+    background: url("") no-repeat 50% top;
+}
 .counter-area .col-md-4 { margin-top: 400px; text-align: center; }
 .counter-area .col-md-4 .counter { font-size: 130px; color: #363a90; font-family: "itc"; text-shadow: 1px 1px 0 white; }
 .counter-area .col-md-4 .counter-tip { font-size: 19px; padding: 0 100px 75px; }
@@ -1328,7 +1333,7 @@ input::-moz-focus-inner, input::-moz-focus-outer { border: 0; }
 
 @media (max-height: 833px) { .main-content { top: 550px; }
   .landing-background { bottom: 0; min-height: 700px; }
-  .quick-link a div:before { max-height: 130px; }
+  .quick-link a div:before { max-height: 80px; }
   .slogan .slogan-main .slogan-big { font-size: 60px; line-height: 4rem; } 
 
 }
@@ -1369,7 +1374,7 @@ input::-moz-focus-inner, input::-moz-focus-outer { border: 0; }
   .slogan { margin: 0; padding-left: 50px; }
   .slogan .slogan-main .slogan-big { font-size: 35px; line-height: 1.3; padding: 0;}
   .slogan .slogan-main .slogan-sub { font-size: 14px; line-height: 1.5; padding-left: 0; padding-top: 10px; }
-  .quick-link { top: -174px; padding: 0 2px; }
+  .quick-link { top: -100px; padding: 0 2px; }
   .quick-link a { text-align: center; width: 50%; padding: 0 2px 4px 2px; }
   .quick-link a div { background-color: rgba(0, 0, 0, 0.4); }
   .quick-link a div span { font-size: 16px; }

@@ -11,7 +11,7 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
     text-align: center;
     transition: all 0.4s ease 0s;
     background: #fff;
-    margin: 5px;
+   
 }
 
 
@@ -158,6 +158,7 @@ DESIGNED & DEVELOPED by FREEHTML5.CO
         margin-top: 0px;
         padding-top: 20px;
     }
+    .pri_table_list{margin-top:10px;}
 }
 
 
@@ -997,6 +998,10 @@ Components
     margin-bottom: -2.5em;
 }
 
+.keepZ {
+    z-index: 1
+}
+
 .owl-theme .owl-dots .owl-dot span {
     width: 10px;
     height: 10px;
@@ -1009,10 +1014,10 @@ Components
     border: 2px solid transparent;
 }
 
-    .owl-theme .owl-dots .owl-dot span:hover {
-        background: none;
-        border: 2px solid #57cecd;
-    }
+.owl-theme .owl-dots .owl-dot span:hover {
+    background: none;
+    border: 2px solid #57cecd;
+}
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: none;

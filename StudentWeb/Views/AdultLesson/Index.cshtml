@@ -1,6 +1,6 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
-@model IPagedList<StudentWeb.Models.JuniorClass>
+@model IPagedList<StudentWeb.Models.AdultClass>
 
 @{
     /**/
@@ -157,43 +157,43 @@
 <div class="fh5co-cards">
     <div class="container-fluid">
 
-        <div class="row" >
-            <div class="col col-sm-4" >
+        <div class="row">
+            <div class="col col-sm-4">
                 <ul class="nav nav-tabs nav-stacked text-center" role="tablist">
-                    <li role="presentation" class="active keepZ"><a href="#EightClass" onclick="ChangeCourse('八年級課程')" aria-controls="EightClass" role="tab" data-toggle="tab">八年級課程</a></li>
-                    <li role="presentation" class="keepZ"><a href="#EightClass" onclick="ChangeCourse('九年級課程')" aria-controls="EightClass" role="tab" data-toggle="tab">九年級課程</a></li>
+                    <li role="presentation" class="active keepZ"><a href="#EightClass" onclick="ChangeCourse('多益課程')" aria-controls="EightClass" role="tab" data-toggle="tab">多益課程</a></li>
+                    <li role="presentation" class="keepZ"><a href="#EightClass" onclick="ChangeCourse('全民英檢')" aria-controls="EightClass" role="tab" data-toggle="tab">全民英檢</a></li>
 
 
                 </ul>
             </div>
             <div class="col col-sm-8">
                 <div class="row tab-content">
-                    <div role="tabpanel" class="tab-pane fade active in"  >        
-                        <div class="" id="TabContent" >
+                    <div role="tabpanel" class="tab-pane fade active in">
+                        <div class="" id="TabContent">
                             @*@foreach (var i in Model)
-                            {
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="pri_table_list active">
-                            <h4>aa </h4>
-                            <button>詳細資訊</button>
-                            </div>
-                            </div>
+                                {
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="pri_table_list active">
+                                <h4>aa </h4>
+                                <button>詳細資訊</button>
+                                </div>
+                                </div>
 
-                            }*@
+                                }*@
                         </div>
-                        
+
                     </div>
 
                 </div>
             </div>
         </div>
         @*<div class="row">
-            <ul class="list-inline pull-right">
-                <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                <li><button type="button" class="btn btn-default next-step">Next</button></li>
-                <li><button type="button" class="btn btn-primary ">Save</button></li>
-            </ul>
-        </div>*@
+                <ul class="list-inline pull-right">
+                    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                    <li><button type="button" class="btn btn-default next-step">Next</button></li>
+                    <li><button type="button" class="btn btn-primary ">Save</button></li>
+                </ul>
+            </div>*@
 
     </div>
 </div>
@@ -206,8 +206,8 @@
 <script>
 
     $(function () {
-        $(".tit").text("國中課程");
-        ChangeCourse("八年級課程");
+        $(".tit").text("成人課程");
+        ChangeCourse("多益課程");
         $('body').on('click', '#DetailBtn', DetailBtn);
     })
 
@@ -219,14 +219,15 @@
     }
 
        function ChangeCourse(Course)
-       {      
+       {
         $.post("@Url.Action("Search")", {coure: Course }, function (data) {
             $("#TabContent").empty();
             var Count = 0;
             for (var i = 0; i < data.id.length; i++)
-            {
-                var key = data.id[i]; 
-                if (Count >= 2) {
+            { 
+                var key = data.id[i];
+                if (Count >= 2)
+                {
                     if (data.title[i].length > 22) {
                         var title = data.title[i].substr(0, 19);
                         $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' style='margin-top:5px'> <div class='pri_table_list active'><h4 style='color: #750112'>" + title + "．．．" + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
@@ -234,7 +235,8 @@
                         $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' style='margin-top:5px'> <div class='pri_table_list active'><h4 style='color: #750112'>" + data.title[i] + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
                     }
 
-                } else {
+                } else
+                {
                     if (data.title[i].length > 22) {
                         var title = data.title[i].substr(0, 19);
                         $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' > <div class='pri_table_list active'><h4 style='color: #750112'>" + title + "．．．" + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
@@ -242,10 +244,9 @@
                         $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' > <div class='pri_table_list active'><h4 style='color: #750112'>" + data.title[i] + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
                     }
 
-                }
+                }             
                 Count++
-
-            }        
+            }
         });
     }
 
