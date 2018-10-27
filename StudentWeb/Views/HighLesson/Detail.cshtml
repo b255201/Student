@@ -1,13 +1,16 @@
 ﻿@model StudentWeb.Models.HighClass
 
 @{
-                /**/
+    /**/
 
-                Layout = "~/Views/Shared/book_Layout.cshtml";
+    /**/
+
+    Layout = "~/Views/Shared/lesson_Layout.cshtml";
 }
 <link href="~/Content/css/templatemo-style.css?20180901" rel="stylesheet" />
 
 <style>
+
     .img-card > img {
         height: 600px;
         width: 540px;
@@ -81,74 +84,81 @@
         padding: 30px;
     }
 
-
-
-
-    @@media (max-width: 992px) {
-        .imgst {
-            width: 100%;
-            height: 380px !important;
-        }
-
-        .head-line {
-            font-size: 14px;
-        }
-
-        .con {
-            top: 428px;
-        }
-
-        .img-card {
-            margin: 0 auto;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-
-        .tit {
-            text-align: center;
-            color: white;
-            letter-spacing: 2.5px;
-            font-size: 24px;
-            font-weight: 400;
-            padding: 5px;
-            padding-top: 30px;
-            padding-bottom: 25px;
-        }
-
-        .titTop {
-            text-align: left;
-            color: white;
-            letter-spacing: 2.5px;
-            font-size: 55px;
-            font-weight: 400;
-            font-family: 華康竹風體W4;
-            padding: 5px;
-            padding-bottom: 100px;
-            margin-top: 150px;
-            text-align: left;
-            right: 30px;
-        }
-        <!-- -->
-        .contact {
-            display: block;
-            float: none;
-            margin-top: 10px;
-        }
-
-        .social {
-            width: 36px;
-            height: 36px;
-        }
-
-        .view {
-            width: 100%;
-        }
-
-        .main {
-            text-align: center;
-        }
+    .fb-comments, .fb-comments iframe[style], .fb-like-box, .fb-like-box iframe[style] {
+        width: 100% !important;
     }
+
+        .fb-comments span, .fb-comments iframe span[style], .fb-like-box span, .fb-like-box iframe span[style] {
+            width: 100% !important;
+        }
+
+
+
+            @@media (max-width: 992px) {
+                .imgst {
+                    width: 100%;
+                    height: 380px !important;
+                }
+
+                .head-line {
+                    font-size: 14px;
+                }
+
+                .con {
+                    top: 428px;
+                }
+
+                .img-card {
+                    margin: 0 auto;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                }
+
+
+                .tit {
+                    text-align: center;
+                    color: white;
+                    letter-spacing: 2.5px;
+                    font-size: 24px;
+                    font-weight: 400;
+                    padding: 5px;
+                    padding-top: 30px;
+                    padding-bottom: 25px;
+                }
+
+                .titTop {
+                    text-align: left;
+                    color: white;
+                    letter-spacing: 2.5px;
+                    font-size: 55px;
+                    font-weight: 400;
+                    font-family: 華康竹風體W4;
+                    padding: 5px;
+                    padding-bottom: 100px;
+                    margin-top: 150px;
+                    text-align: left;
+                    right: 30px;
+                }
+                <!-- -->
+                .contact {
+                    display: block;
+                    float: none;
+                    margin-top: 10px;
+                }
+
+                .social {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                .view {
+                    width: 100%;
+                }
+
+                .main {
+                    text-align: center;
+                }
+            }
 </style>
 
 <div style="padding-bottom:20px;border-bottom:2px solid gray;padding-top:10px;">
@@ -172,17 +182,22 @@
                 }
             </div>
         </div>
-        <div class="form-group" style="text-align:left;margin-top:20px">
-            <div class="col-sm-12">
-                <div style="text-align:left">
-                    <button class="btn btn-danger" style="width:100%;padding:25px;font-size:18px" onclick="history.back();" style="cursor:pointer">回上一頁</button>
-                </div>
-            </div>
-        </div>
     </div>
-
 </div>
 
+<div class="form-group" style="text-align:left;margin-top:20px">
+    <div class="col-sm-12">
+        <div class="fb-like" data-href="http://www.learnschool.com.tw/HighLesson/Detail/@Model.Id" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+
+        <div class="fb-comments" data-width="100%" data-href="http://www.learnschool.com.tw/HighLesson/Detail/@Model.Id" data-numposts="5">
+        </div>
+   
+
+        @*<div style="text-align:left">
+            <button class="btn btn-danger" style="width:100%;padding:25px;font-size:18px;cursor:pointer" onclick="history.back();">回上一頁</button>
+        </div>*@
+    </div>
+</div>
 
 
 <div class="clear()"></div>
@@ -198,6 +213,7 @@
     $(function () {
 
         $(".tit").text('@ViewBag.Course');
+
     })
     function ContactSend() {
 
