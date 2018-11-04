@@ -1,0 +1,368 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<StudentWeb.Models.JuniorClass>
+
+@{
+    /**/
+    Layout = "~/Views/Shared/lesson_Layout.cshtml";
+}
+<link href="~/Content/css/templatemo-style.css?20180901" rel="stylesheet" />
+
+<style>
+
+
+
+    .img-card > img {
+        height: 600px;
+        width: 540px;
+    }
+    <!-- -->
+    .view {
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+    .head {
+        padding: 30px 0px;
+        color: #ffffff;
+        background-color: #004444;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 175%;
+        display: inline-block;
+    }
+
+    .contact {
+        float: right;
+        display: inline-block;
+    }
+
+    .social {
+        margin: 0px 5px;
+    }
+
+
+    .main {
+        padding: 30px 0px;
+        background-color: #eeeeee;
+    }
+
+    .block {
+        width: 280px;
+        height: 280px;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        line-height: 40px;
+        background-color: #eeffff;
+        box-shadow: 0px 0px 5px #888888;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .block-head {
+        font-weight: bold;
+        font-size: 120%;
+    }
+
+    .block-main {
+        margin-top: 10px;
+    }
+
+    .tit {
+        text-align: center;
+        color: white;
+        letter-spacing: 2.5px;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 30px;
+    }
+
+    .imgst {
+        width: 100%;
+        height: 380px !important;
+    }
+    /*carrerTit*/
+    .carrerTit {
+        margin-top: 2px;
+    }
+
+    @@media (max-width: 992px) {
+        .carrerTit {
+            margin-top: 15px;
+        }
+
+        .head-line {
+            font-size: 14px;
+        }
+
+        .con {
+            top: 428px;
+        }
+
+        .img-card {
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .tit {
+            text-align: center;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 5px;
+            padding-top: 30px;
+            padding-bottom: 25px;
+        }
+
+        .titTop {
+            text-align: left;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 55px;
+            font-weight: 400;
+            font-family: 華康竹風體W4;
+            padding: 5px;
+            padding-bottom: 100px;
+            margin-top: 150px;
+            text-align: left;
+            right: 30px;
+        }
+
+        .imgst {
+            width: 100%;
+            height: 380px !important;
+        }
+        <!-- -->
+        .contact {
+            display: block;
+            float: none;
+            margin-top: 10px;
+        }
+
+        .social {
+            width: 36px;
+            height: 36px;
+        }
+
+        .view {
+            width: 100%;
+        }
+
+        .main {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="fh5co-cards">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col col-sm-4">
+                <ul class="nav nav-tabs nav-stacked text-center" role="tablist">
+                    <li role="presentation" class="active keepZ"><a href="#BenefitClass" aria-controls="BenefitClass" role="tab" data-toggle="tab">福利制度</a></li>
+                    <li role="presentation" class="keepZ"><a href="#join-us" aria-controls="join-us" role="tab" data-toggle="tab">正職職缺</a></li>
+                    <li role="presentation" class="keepZ"><a href="#part-time" aria-controls="part-time" role="tab" data-toggle="tab">兼職職缺</a></li>
+                </ul>
+            </div>
+            <div class="col col-sm-8">
+                <div class="row tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="BenefitClass">
+                        <div class="" id="TabContent">
+                            <div class='col-md-12 col -sm-12 col-xs-12'>
+                                <h3 style='color: #750112;font-weight:800;' class="carrerTit">福利制度</h3>
+                                <hr />
+
+                                <ul>
+                                    <li style="color:gray;font-weight:300">薪酬福利：年終獎金、業績獎金、年度績效獎金</li>
+                                    <li style="color:gray;font-weight:300">保險制度：享有勞保、健保</li>
+                                    <li style="color:gray;font-weight:300">訓練發展：完善的教育訓練，包括新進訓練、專業訓練、管理訓練…等</li>
+                                    <li style="color:gray;font-weight:300">其他福利：順暢的溝通管道、順暢的升遷制度、良好的工作氛圍</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div role="tabpanel" class="tab-pane fade active " id="join-us">
+                        <div class="" id="TabContent">
+                            <div class='col-md-12 col -sm-12 col-xs-12'>
+                                <h3 style='color: #750112;font-weight:800;' class="carrerTit">行政櫃台</h3>
+                                <hr />
+                                <ul>
+                                    <li style="color:gray;font-weight:300">負責櫃台相關工作 。</li>
+                                    <li style="color:gray;font-weight:300">解說課程內容。</li>
+                                    <li style="color:gray;font-weight:300">操作學生管理系統。</li>
+                                    <li style="color:gray;font-weight:300">收費接待學員及家長。</li>
+                                    <li style="color:gray;font-weight:300"> 星期一公休, 星期二18:00~22:00, (三)~(五)15:00~22:00, (六)(日)13:00~22:00。</li>
+                                </ul>
+                                <br />
+                            </div>
+
+                            <div class='col-md-12 col -sm-12 col-xs-12'>
+                                <h3 style='color: #750112;font-weight:800' class="carrerTit">招生企劃儲備幹部</h3>
+                                <hr />
+
+                                <ul>
+                                    <li style="color:gray;font-weight:300"> 協助正職招生人員電話拜訪與試聽邀約。 </li>
+                                    <li style="color:gray;font-weight:300">彈性排班 (想什麼時候上班就什麼時候上班)。 </li>
+                                    <li style="color:gray;font-weight:300"> 無業績壓力，協助成交另有獎金。 </li>
+                                    <li style="color:gray;font-weight:300">短期配合可，長期配合佳。 </li>
+                                    <li style="color:gray;font-weight:300">熟悉高中學制與學測。</li>
+                                    <li style="color:gray;font-weight:300">工作時間：週一～週五 18:30~21:30  週六～週日 13:30~17:30 及 18:30~21:30 。</li>
+                                    <li style="color:gray;font-weight:300">若無法和陌生人自然交談者，請勿投遞履歷，以免浪費雙方時間。</li>
+                                </ul>
+                                <br />
+                            </div>
+                            <div class='col-md-12 col -sm-12 col-xs-12'>
+                                <h3 style='color: #750112;font-weight:800;margin:2px'><a target="_blank" href="https://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=4b4149723b3d456e3739416a3f453d2083030302d4773497119j98">職缺列表-104人力銀行</a></h3>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade active " id="part-time">
+                        <div class="" id="TabContent">
+                            <div class='col-md-12 col -sm-12 col-xs-12'>
+                                <h3 style='color: #750112;font-weight:800;' class="carrerTit">電訪人員</h3>
+                                <hr />
+                                <ul>
+                                    <li style="color:gray;font-weight:300">試用期保障底薪3萬，單筆開發獎金近萬元。 </li>
+                                    <li style="color:gray;font-weight:300">熟悉團隊作業，透過分工合作共同達成部門業績目標。 </li>
+                                    <li style="color:gray;font-weight:300">分享溝通經驗，個案分析，以提升整體戰力為最高任務。 </li>
+                                    <li style="color:gray;font-weight:300">透過電話或邀請學生與家長親臨班本部進行課程介紹，了解學生需求，提供適合之課程建議。 </li>
+                                    <li style="color:gray;font-weight:300">跑校及特定區域之宣傳行銷操作。</li>
+                                    <li style="color:gray;font-weight:300">能擬定行銷企劃並落實執行與事後檢討。</li>
+                                    <li style="color:gray;font-weight:300">公司提供完整儲備菁英培訓計畫，培育專業行銷管理人才。</li>
+                                    <li style="color:gray;font-weight:300">星期一公休，星期二18:00~22:00, 星期三~五15:00~22:00, 星期六日13:00~22:00</li>
+
+                                </ul>
+                                <br />
+                            </div>
+                            <div class='col-md-12 col -sm-12 col-xs-12'>
+                                <h3 style='color: #750112;font-weight:800;margin:2px'><a target="_blank" href="https://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=4b4149723b3d456e3739416a3f453d2083030302d4773497119j98">職缺列表-104人力銀行</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    $(function () {
+        $(".tit").text("菁英招聘");
+        //ChangeCourse("八年級課程");
+        $('body').on('click', '#DetailBtn', DetailBtn);
+    })
+
+    function DetailBtn()
+    {
+        var eid = $(this).data("eid");
+        var url = "Detail/" + eid;
+        window.location.href =url;
+    }
+
+       function ChangeCourse(Course)
+       {
+        $.post("@Url.Action("Search")", {coure: Course }, function (data) {
+            $("#TabContent").empty();
+            var Count = 0;
+            for (var i = 0; i < data.id.length; i++)
+            {
+                var key = data.id[i];
+                if (Count >= 2) {
+                    if (data.title[i].length > 22) {
+                        var title = data.title[i].substr(0, 19);
+                        $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' style='margin-top:5px'> <div class='pri_table_list active'><h4 style='color: #750112'>" + title + "．．．" + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
+                    } else {
+                        $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' style='margin-top:5px'> <div class='pri_table_list active'><h4 style='color: #750112'>" + data.title[i] + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
+                    }
+
+                } else {
+                    if (data.title[i].length > 22) {
+                        var title = data.title[i].substr(0, 19);
+                        $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' > <div class='pri_table_list active'><h4 style='color: #750112'>" + title + "．．．" + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
+                    } else {
+                        $("#TabContent").append("<div class='col-md-6 col -sm-6 col-xs-12' > <div class='pri_table_list active'><h4 style='color: #750112'>" + data.title[i] + "</h4><button id='DetailBtn'  src='JuniorLesson/Detail/1'  data-eid=" + key + " >詳細資訊</button></div></div>");
+                    }
+
+                }
+                Count++
+
+            }
+        });
+    }
+
+    function ContactSend() {
+
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+
+        if ($("#email").val().trim() != "") {
+            var emailRule = /^\w+((-\w+)|(\.\w+))*\@@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+            if (emailRule.test($("#email").val()) == false) {
+                alert("信箱格式有誤,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() != "") {
+            var Phone = $("#Phone").val().trim();
+            Phone = Phone.replace(/\s+/g, "").length;
+            if (Phone != "10") {
+                alert("手機請填寫10碼,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#LocalPhone").val().trim() != "") {
+            var LocalPhone = $("#LocalPhone").val().trim();
+            LocalPhone = LocalPhone.replace(/\s+/g, "").length;
+            if (LocalPhone < "8") {
+                alert("電話至少8碼,請檢查");
+                return false;
+            }
+        }
+
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+</script>

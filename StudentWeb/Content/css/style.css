@@ -20,7 +20,8 @@ h3 { font-size: 18px; margin: 10px 0; }
 
 
 button:focus { outline: none; }
-/*contact form*/
+
+
 .sloganlesson {
     line-height: 50px;
     text-align: center;
@@ -120,13 +121,18 @@ button:focus { outline: none; }
   display: inline-block;
   opacity: 0.6;
   transition: opacity ease 0.5s;
-} 
-
-.login-help{
-  font-size: 12px;
 }
-/*form-contact*/    
-.modal-backdrop{z-index: 0 !important; }
+
+.login-help {
+    font-size: 12px;
+}
+/*form-contact*/
+
+
+
+.modal-backdrop {
+    z-index: 0 !important;
+}
 /*contact form*/
 
 @-moz-keyframes fadeIn { 0% { opacity: 0; display: block; }

@@ -24,7 +24,7 @@ namespace StudentWeb.Controllers
             //最新消息
             var pageNumber = page ?? 1;
             var L = LastNew.GetAll().OrderByDescending(c => c.Id); 
-            return View(L.ToList().ToPagedList(pageNumber, 9));
+            return View(L.ToList().ToPagedList(pageNumber, 10));
         }
         [HttpPost]
         public ActionResult InsertContact(FormCollection form)
@@ -49,6 +49,7 @@ namespace StudentWeb.Controllers
                 f.LocalPhone = form["LocalPhone"];
                 f.Course = form["Course"];
                 f.CreateTime = DateTime.Now;
+                f.Memo = form["Memo"];
                 db.FreeTrails.Add(f);
                 db.SaveChanges();
                 return Json(new { Status = "0", Message = "" });

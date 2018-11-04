@@ -16,5 +16,7 @@ namespace StudenWeb.ViewModel
         public string title { get; set; }
 
         public int SeqID { get; set; }
+
+        public string Memo { get; set; }
     }
 }

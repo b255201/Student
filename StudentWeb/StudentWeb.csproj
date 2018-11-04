@@ -164,12 +164,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdultLessonController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\CareerController.cs" />
     <Compile Include="Controllers\ChildLessonController.cs" />
     <Compile Include="Controllers\DialogController.cs" />
     <Compile Include="Controllers\HighLessonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuniorLessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
+    <Compile Include="Controllers\LiveController.cs" />
     <Compile Include="Models\Activity_Message.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
@@ -6274,6 +6276,8 @@
     <Content Include="Views\ChildLesson\Index.cshtml" />
     <Content Include="Views\AdultLesson\Index.cshtml" />
     <Content Include="Views\AdultLesson\Detail.cshtml" />
+    <Content Include="Views\Career\Index.cshtml" />
+    <Content Include="Views\Live\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

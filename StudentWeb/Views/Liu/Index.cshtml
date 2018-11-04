@@ -10,7 +10,11 @@
 }
 
 <style>
-    /*page*/
+    /*formcontactmemo*/
+    .memotest {
+        display: none
+    }
+
     .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
         z-index: 1 !important;
     }
@@ -47,7 +51,6 @@
 
         ul > li {
             color: red;
-         
         }
 
             ul > li > a {
@@ -57,10 +60,10 @@
 
                 ul > li > a:hover {
                     color: black;
-                    text-decoration:none;
+                    text-decoration: none;
                 }
 
- 
+
 
 
     .Active-news-rwd-display {
@@ -70,16 +73,17 @@
     .Active-news-display {
         display: block;
     }
-    .modal-backdrop
-    {
-        background-color:white !important;
+
+    .modal-backdrop {
+        background-color: white !important;
     }
-    .modal-backdrop.in
-    {
-        opacity:0.2 !important
-    }
-        @@media (max-width: 992px) {
-            #newtit {
+
+        .modal-backdrop.in {
+            opacity: 0.2 !important
+        }
+
+    @@media (max-width: 992px) {
+        #newtit {
             margin-top: -60px !important;
         }
         /*.img-href {
@@ -95,14 +99,11 @@
         .Active-news-rwd-display {
             display: block;
         }
-            .LiuTitle {
-                margin-top: 2px !important;
-            }
+
+        .LiuTitle {
+            margin-top: 2px !important;
+        }
     }
-
-
-
-
 </style>
 
 
@@ -191,7 +192,7 @@
 
 
 <div class="col-md-6 photo-block">
-    <div class="LiuTitle"  style="text-align:left;"><img src="~/Content/img/liu-Yi.png" /></div>
+    <div class="LiuTitle" style="text-align:left;"><img src="~/Content/img/liu-Yi.png" /></div>
     <h2 class="LiuTitle" style="font-weight:800;text-align:left;color:white">劉毅</h2>
     <div class="introLiu">1971年 劉毅老師發明「模考制度」，開始在台南一中對面的天主堂教英文。由八位同學開始教起。現在台大醫院副院長王主科教授就是當時的學生。</div>
     <div class="introLiu">1972年 「劉毅英文」有四位同學考上台大醫科，陳耀楨為榜道。</div>
@@ -215,26 +216,27 @@
                 <h2 id="newtit"> 最新消息</h2>
                 <hr />
                 <ul class="newsul " style="list-style-type: square">
-                    @foreach (var h in Model)
-                    {
-                        if (@h.Description.Count() < 10)
+                    <li style="margin-top: 5px">
+                        @foreach (var h in Model)
                         {
+                            if (@h.Description.Count() < 10)
+                            {
                             <li style="margin-top: 5px"><a style="font-size:14px;cursor:pointer" onclick="LoginDialog(@h.Id,'@h.title')">@h.CreateTime.ToShortDateString() &nbsp &nbsp @h.title &nbsp<span class="ulspan" style="color:#FF0000;cursor:pointer">....read more</span></a></li>
 
-                            
+
                         }
                         else
                         {
                             <li style="margin-top: 5px"><a style="font-size:14px;cursor:pointer" onclick="LoginDialog(@h.Id,'@h.title')">@h.CreateTime.ToShortDateString() &nbsp &nbsp @h.title &nbsp<span class="ulspan" style="color:#FF0000;cursor:pointer">....read more</span></a></li>
-                           
+
                         }
 
                     }
 
-                    @Html.PagedListPager(Model, Page => Url.Action("High_school", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                        @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
 
-                </ul>
-               
+                    </ul>
+
             </div>
         </div>
 
@@ -254,7 +256,7 @@
 <div class="clear"></div>
 
 
-<div class="col-md-12 contact-block" id="Contactdiv" style="text-align:center">
+<div class="col-md-12 contact-block" id="Contactdiv" style="text-align:center;height:auto">
 
 
     <div class="contactword">
@@ -300,7 +302,7 @@
         <div class="form-group" style="text-align:left">
             <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Course">課程:</label>
             <div class="col-sm-9">
-                <select class="form-control" id="Course" name="Course">
+                <select class="form-control" id="Course" name="Course" onchange="Shomemo(this.value)">
                     <option value="小六升國七精熟銜接班">小六升國七精熟銜接班</option>
                     <option value="國七升國八超前進度班">國七升國八超前進度班</option>
                     <option value="會考保證班">會考保證班</option>
@@ -318,6 +320,13 @@
                 </select>
             </div>
         </div>
+        <div class="form-group memotest" style="text-align:left;" id="memoform">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Memo">備註:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="Memo" placeholder="備註" name="Memo">
+            </div>
+        </div>
+
         <div class="form-group" style="text-align:left;margin-top:25px">
             <label style="margin-right:-15px;" class="control-label col-sm-2"></label>
             <div class="col-sm-9">
@@ -332,6 +341,9 @@
 <div class="clear"></div>
 
 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
 
 <script>
     $(function () {
@@ -344,19 +356,16 @@
         }, 2000);
     }
 
+    function Shomemo(x) {
+        if (x == "其他") {
+            $("#memoform").removeClass("memotest");
+
+        } else {
+            $("#memoform").addClass("memotest");
+        }
+    }
+
     function ContactSend() {
-        
-
-        // 送出事件紀錄
-        //gtag("event", "點擊", {
-        //    "event_category": "預約試聽",
-        //    "event_label": "點擊次數",
-        //    "value": 1
-        //});
-
-
-
-
         if ($("#name").val().trim() == "") {
             alert("請填寫姓名");
             return false;
@@ -394,6 +403,12 @@
                 return false;
             }
         }
+        // 送出事件紀錄
+        //gtag("event", "點擊", {
+        //    "event_category": "預約試聽",
+        //    "event_label": "點擊次數",
+        //    "value": 1
+        //});
 
         $.ajax({
             url: "/Liu/InsertContact",
@@ -417,9 +432,9 @@
 
 
     //登入案紐
-    function LoginDialog(id,title) {
+    function LoginDialog(id, title) {
         var title = title;
-        var url = "/Dialog/LastNewInfo/"+id;
+        var url = "/Dialog/LastNewInfo/" + id;
         $.post(url, {},
             function (data, status) {
                 if (status == "success") {

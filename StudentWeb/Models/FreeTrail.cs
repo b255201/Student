@@ -22,5 +22,6 @@ namespace StudentWeb.Models
         public string LocalPhone { get; set; }
         public string Course { get; set; }
         public Nullable<System.DateTime> CreateTime { get; set; }
+        public string Memo { get; set; }
     }
 }
