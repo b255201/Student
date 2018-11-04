@@ -155,6 +155,17 @@
           <Property Name="permissionId" Type="int" Nullable="false" />
           <Property Name="permissionName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Context" Type="nvarchar(max)" />
+          <Property Name="Date" Type="nvarchar" MaxLength="15" />
+          <Property Name="href" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_employee_employeeCategory">
           <End Role="employeeCategory" Type="Self.employeeCategory" Multiplicity="1" />
           <End Role="employee" Type="Self.employee" Multiplicity="*" />
@@ -207,6 +218,7 @@
           <EntitySet Name="JuniorHigh_School" EntityType="Self.JuniorHigh_School" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LastNews" EntityType="Self.LastNews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="permission" EntityType="Self.permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_employee_employeeCategory" Association="Self.FK_employee_employeeCategory">
             <End Role="employeeCategory" EntitySet="employeeCategory" />
             <End Role="employee" EntitySet="employee" />
@@ -266,6 +278,7 @@
           <EntitySet Name="AdultClasses" EntityType="StudentModel.AdultClass" />
           <EntitySet Name="ChildClasses" EntityType="StudentModel.ChildClass" />
           <EntitySet Name="HighClasses" EntityType="StudentModel.HighClass" />
+          <EntitySet Name="Videos" EntityType="StudentModel.Video" />
         </EntityContainer>
         <EntityType Name="employee">
           <Key>
@@ -445,6 +458,17 @@
           <Property Name="Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="href" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -612,6 +636,18 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videos">
+            <EntityTypeMapping TypeName="StudentModel.Video">
+              <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="href" ColumnName="href" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Context" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

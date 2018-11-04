@@ -172,6 +172,7 @@
     <Compile Include="Controllers\JuniorLessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
     <Compile Include="Controllers\LiveController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Models\Activity_Message.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
@@ -219,6 +220,7 @@
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Partial\elementary_Book.cs" />
+    <Compile Include="Models\Partial\Video.cs" />
     <Compile Include="Models\Partial\FreeTrail.cs" />
     <Compile Include="Models\Partial\High_Book.cs" />
     <Compile Include="Models\Partial\JuniorHigh_School.cs" />
@@ -227,6 +229,9 @@
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\Video.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\StudentModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -243,6 +248,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="viewmodel\VideoViewModel.cs" />
     <Compile Include="viewmodel\CourseViewModel.cs" />
     <Compile Include="viewmodel\LessonViewModel.cs" />
   </ItemGroup>
@@ -6278,6 +6284,7 @@
     <Content Include="Views\AdultLesson\Detail.cshtml" />
     <Content Include="Views\Career\Index.cshtml" />
     <Content Include="Views\Live\Index.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

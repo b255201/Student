@@ -23,6 +23,7 @@
         <EntityTypeShape EntityType="StudentModel.AdultClass" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="StudentModel.ChildClass" Width="1.5" PointX="0.75" PointY="10.75" />
         <EntityTypeShape EntityType="StudentModel.HighClass" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="StudentModel.Video" Width="1.5" PointX="10.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

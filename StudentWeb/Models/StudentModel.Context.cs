@@ -40,5 +40,6 @@ namespace StudentWeb.Models
         public virtual DbSet<AdultClass> AdultClasses { get; set; }
         public virtual DbSet<ChildClass> ChildClasses { get; set; }
         public virtual DbSet<HighClass> HighClasses { get; set; }
+        public virtual DbSet<Video> Videos { get; set; }
     }
 }
