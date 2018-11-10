@@ -41,7 +41,7 @@
             }
 
             .news-zone .news-list-item .news-intro {
-                max-width: calc( 100% - 225px );
+                /*max-width: calc( 100% - 225px );*/
                 display: inline-block;
                 vertical-align: top;
                 padding-left: 15px;
@@ -82,25 +82,6 @@
                 -webkit-transition: color 200ms;
                 transition: color 200ms;
             }
-
-    /*.news-zone .news-list-item:first-child {
-                padding-top: 10px;
-            }
-
-                .news-zone .news-list-item:first-child .news-cover {
-                    width: 100%;
-                    height: 400px;
-                }
-
-                .news-zone .news-list-item:first-child .news-intro {
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    background-color: white;
-                    width: 100%;
-                    padding-bottom: 30px;
-                }*/
-
     .news-cover {
         width: 220px;
         height: 150px;
@@ -358,40 +339,6 @@
                                 </div>
                             </div>
                         }
-
-
-
-                        @*<div class="news-list-item">
-            <div class="news-intro">
-                <a href="#" class="news-title">
-                    2018-11-04【劉毅老師】我可以在大學為未來的我做些什麼？
-                </a>
-
-                <div class="news-short">
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                </div>
-                <button id="fancybox" style="margin-top:10px;" class="btn btn-primary" href="https://www.youtube.com/embed/sg_WE0ToJjM" data-fancybox-type="iframe">觀看影片</button>
-            </div>
-        </div>
-
-
-        <div class="news-list-item">
-            <div class="news-intro">
-                <a href="#" class="news-title">
-                    2018-10-03【劉毅老師】我可以在大學為未來的我做些什麼？
-                </a>
-                <div class="news-short">
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                    今天，我們來介紹一個新的概念，讓你重新定義自己的人生，或許會發現人生其實有更多種可能！
-                </div>
-                <button id="fancybox1" style="margin-top:10px;" class="btn btn-primary" href="https://www.youtube.com/embed/y_cRDZXc3Hk" data-fancybox-type="iframe">觀看影片</button>
-            </div>
-        </div>*@
-
                     </div>
                 </div>
             </div>
@@ -402,7 +349,7 @@
 <script>
 
     $(function () {
-        $(".tit").text("影音專區");
+        $(".tit").text("媒體報導");
      
         for (var x = 1; x <= @ViewBag.Count; x++)
         {

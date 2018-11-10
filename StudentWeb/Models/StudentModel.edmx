@@ -160,7 +160,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Context" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Date" Type="nvarchar" MaxLength="15" />
           <Property Name="href" Type="nvarchar(max)" />
           <Property Name="CreateTime" Type="datetime" />
@@ -646,7 +646,7 @@
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="href" ColumnName="href" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Description" ColumnName="Context" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
               </MappingFragment>
             </EntityTypeMapping>
