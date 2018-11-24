@@ -20,5 +20,6 @@ namespace StudentWeb.Models
         public string href { get; set; }
         public Nullable<System.DateTime> CreateTime { get; set; }
         public int Id { get; set; }
+        public string Item { get; set; }
     }
 }

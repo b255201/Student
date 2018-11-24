@@ -172,6 +172,7 @@
     <Compile Include="Controllers\JuniorLessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
     <Compile Include="Controllers\LiveController.cs" />
+    <Compile Include="Controllers\ScholarShipController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Models\Activity_Message.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
@@ -229,6 +230,9 @@
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repository.cs" />
+    <Compile Include="Models\ScholarShip.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Video.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
@@ -5640,8 +5644,8 @@
     <Content Include="Content\img\junior_high_01.jpg" />
     <Content Include="Content\img\kid_class_01.jpg" />
     <Content Include="Content\img\liu-Yi.png" />
-    <Content Include="Content\img\liu.mp4" />
     <Content Include="Content\img\logo_LE.jpg" />
+    <Content Include="Content\img\newbook\aaaa.png" />
     <Content Include="Content\img\newbook\DVD_系列\一分鐘背9個單字講座實況DVD_二片_DVD盒外標_20170411.gif" />
     <Content Include="Content\img\newbook\DVD_系列\一生必背的200個諺語講座實況DVD.jpg" />
     <Content Include="Content\img\newbook\DVD_系列\喜怒哀樂食衣住行英語_講座實況DVD_20160715_印.jpg" />
@@ -5837,6 +5841,7 @@
     <Content Include="Content\img\newbook\英文名師必備教本\29_7000字文意選填詳解_教本_湖水藍.jpg" />
     <Content Include="Content\img\newbook\英文名師必備教本\30_如何寫看圖英作文教本-01.jpg" />
     <Content Include="Content\img\newbook\英文名師必備教本\31_7000字篇章結構_教師手冊_平面_小.jpg" />
+    <Content Include="Content\img\roombanner.jpg" />
     <Content Include="Content\img\Senior_001.jpg" />
     <Content Include="Content\img\Senior_002.jpg" />
     <Content Include="Content\js\boostrap3.js" />
@@ -6284,7 +6289,9 @@
     <Content Include="Views\AdultLesson\Detail.cshtml" />
     <Content Include="Views\Career\Index.cshtml" />
     <Content Include="Views\Live\Index.cshtml" />
-    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\Media.cshtml" />
+    <Content Include="Views\Video\Lesson.cshtml" />
+    <Content Include="Views\ScholarShip\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

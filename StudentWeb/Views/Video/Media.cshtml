@@ -1,0 +1,437 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<StudentWeb.Models.Video>
+
+@{
+    /**/
+    Layout = "~/Views/Shared/lesson_Layout.cshtml";
+}
+<link href="~/Content/css/templatemo-style.css?20180901 rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css" media="screen">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+
+
+
+<style>
+
+    .news-zone {
+        padding: 15px;
+    }
+
+        .news-zone .zone-title {
+            margin: 25px 0 0;
+        }
+
+        .news-zone .news-list-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            -moz-transition: color 200ms;
+            -o-transition: color 200ms;
+            -webkit-transition: color 200ms;
+            transition: color 200ms;
+        }
+
+            .news-zone .news-list-item:last-child {
+                border: none;
+            }
+
+            .news-zone .news-list-item .news-intro {
+                /*max-width: calc( 100% - 225px );*/
+                display: inline-block;
+                vertical-align: top;
+                padding-left: 15px;
+                font-size: 16px;
+            }
+
+                .news-zone .news-list-item .news-intro .news-title {
+                    font-weight: bold;
+                    font-size: 22px;
+                    -moz-transition: color 200ms;
+                    -o-transition: color 200ms;
+                    -webkit-transition: color 200ms;
+                    transition: color 200ms;
+                    text-decoration: none;
+                }
+
+                .news-zone .news-list-item .news-intro .news-short {
+                    color: #bbb;
+                    line-height: 1.8;
+                    -moz-transition: color 200ms;
+                    -o-transition: color 200ms;
+                    -webkit-transition: color 200ms;
+                    transition: color 200ms;
+                }
+
+            .news-zone .news-list-item:hover .news-title {
+                color: #df0024;
+                -moz-transition: color 200ms;
+                -o-transition: color 200ms;
+                -webkit-transition: color 200ms;
+                transition: color 200ms;
+            }
+
+            .news-zone .news-list-item:hover .news-short {
+                color: #333;
+                -moz-transition: color 200ms;
+                -o-transition: color 200ms;
+                -webkit-transition: color 200ms;
+                transition: color 200ms;
+            }
+    .news-cover {
+        width: 220px;
+        height: 150px;
+        background-size: cover;
+        background-position: center center;
+        display: inline-block;
+    }
+
+    .zone-title {
+        font-size: 30px;
+        font-family: serif;
+        font-style: italic;
+    }
+
+    .list-zone .col-md-4 {
+        position: sticky;
+        top: 10px;
+    }
+
+    .list-zone .type-dark {
+        display: inline-block;
+        font-size: 14px;
+        margin: 7px 0;
+        padding: 5px 10px;
+    }
+
+
+
+    .img-card > img {
+        height: 600px;
+        width: 540px;
+    }
+    <!-- -->
+    .view {
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+    .head {
+        padding: 30px 0px;
+        color: #ffffff;
+        background-color: #004444;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 175%;
+        display: inline-block;
+    }
+
+    .contact {
+        float: right;
+        display: inline-block;
+    }
+
+    .social {
+        margin: 0px 5px;
+    }
+
+
+    .main {
+        padding: 30px 0px;
+        background-color: #eeeeee;
+    }
+
+    .block {
+        width: 280px;
+        height: 280px;
+        padding: 10px;
+        margin: 10px;
+        display: inline-block;
+        line-height: 40px;
+        background-color: #eeffff;
+        box-shadow: 0px 0px 5px #888888;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .block-head {
+        font-weight: bold;
+        font-size: 120%;
+    }
+
+    .block-main {
+        margin-top: 10px;
+    }
+
+    .tit {
+        text-align: center;
+        color: white;
+        letter-spacing: 2.5px;
+        font-size: 28px;
+        font-weight: 400;
+        padding: 30px;
+    }
+
+    .imgst {
+        width: 100%;
+        height: 380px !important;
+    }
+
+    .fh5co-cards {
+        padding: 0em 0 !important
+    }
+
+    .fh5co-cards {
+        padding-bottom: 3em !important
+    }
+
+
+    @@media (max-width: 992px) {
+        .fh5co-cards {
+            padding: 1em 0 !important
+        }
+
+        .news-zone {
+            padding: 0;
+        }
+
+            .news-zone .zone-title {
+                margin-top: 10px;
+                font-size: 16px;
+                padding: 5px;
+            }
+
+            .news-zone .news-list-item {
+                padding: 10px 0;
+    
+            }
+
+                .news-zone .news-list-item .news-intro {
+                    display: block;
+                    max-width: none;
+                    padding: 5px;
+                }
+
+                    .news-zone .news-list-item .news-intro .news-title {
+                        display: block;
+                        font-size: 18px;
+                    }
+
+                .news-zone .news-list-item:first-of-type, .news-zone .news-list-item:nth-of-type(2), .news-zone .news-list-item:nth-of-type(3) {
+                    display: block;
+                }
+
+                    .news-zone .news-list-item:first-of-type .news-cover {
+                        display: block;
+                        height: 300px;
+                    }
+
+                    .news-zone .news-list-item:first-of-type .new-intro {
+                        position: relative;
+                        display: block;
+                    }
+
+        .event-zone {
+            padding: 15px;
+        }
+
+            .event-zone .zone-title {
+                font-size: 16px;
+            }
+
+            .event-zone .event-zone-item .event-item-intro .location {
+                font-size: 16px;
+            }
+
+            .event-zone .event-zone-item:nth-of-type(2), .event-zone .event-zone-item:nth-of-type(3), .event-zone .event-zone-item:nth-of-type(4) {
+                display: block;
+            }
+    
+        .head-line {
+            font-size: 14px;
+        }
+
+        .con {
+            top: 428px;
+        }
+
+        .img-card {
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .tit {
+            text-align: center;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 5px;
+            padding-top: 30px;
+            padding-bottom: 25px;
+        }
+
+        .titTop {
+            text-align: left;
+            color: white;
+            letter-spacing: 2.5px;
+            font-size: 55px;
+            font-weight: 400;
+            font-family: 華康竹風體W4;
+            padding: 5px;
+            padding-bottom: 100px;
+            margin-top: 150px;
+            text-align: left;
+            right: 30px;
+        }
+
+        .imgst {
+            width: 100%;
+            height: 380px !important;
+        }
+        <!-- -->
+        .contact {
+            display: block;
+            float: none;
+            margin-top: 10px;
+        }
+
+        .social {
+            width: 36px;
+            height: 36px;
+        }
+
+        .view {
+            width: 100%;
+        }
+
+        .main {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="fh5co-cards">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="news-zone">
+                    <div class="news-zone-list">
+                        @foreach (var i in Model)
+                        {
+                            <div class="news-list-item">
+                                <div class="news-intro">
+                                    <a  class="news-title">
+                                        @i.Date【@i.Title】
+                                    </a>
+                                    <div class="news-short">
+                                        @i.Description                     
+                                    </div>
+                                    <button id="@i.Id" style="margin-top:10px;" class="btn btn-primary" href="@i.href" data-fancybox-type="iframe">觀看影片</button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        $(".tit").text("媒體報導");
+     
+        for (var x = 1; x <= @ViewBag.Count; x++)
+        {
+            $('#'+x).fancybox({
+                type: "iframe"
+            });
+        }
+    })
+
+    function showVideo() {
+        $.fancybox({
+            'width': '60%',
+            'height': '80%',
+            'autoScale': true,
+            'transitionIn': 'fade',
+            'transitionOut': 'fade',
+            'href': "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.211816651312!2d121.54182121456314!3d25.06080894337124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abe48d72fbf9%3A0x6d53a93c619a085a!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDlvqnoiIjljJfot68zNzjomZ8xMEY!5e0!3m2!1szh-TW!2stw!4v1541320647009",
+            'type': 'iframe',
+            'onClosed': function () {
+                window.location.href = "f?p=&APP_ID.:211:&SESSION.::&DEBUG.::";
+            }
+        })
+        return false;
+    }
+
+
+    function ContactSend() {
+
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+
+        if ($("#email").val().trim() != "") {
+            var emailRule = /^\w+((-\w+)|(\.\w+))*\@@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+            if (emailRule.test($("#email").val()) == false) {
+                alert("信箱格式有誤,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() != "") {
+            var Phone = $("#Phone").val().trim();
+            Phone = Phone.replace(/\s+/g, "").length;
+            if (Phone != "10") {
+                alert("手機請填寫10碼,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#LocalPhone").val().trim() != "") {
+            var LocalPhone = $("#LocalPhone").val().trim();
+            LocalPhone = LocalPhone.replace(/\s+/g, "").length;
+            if (LocalPhone < "8") {
+                alert("電話至少8碼,請檢查");
+                return false;
+            }
+        }
+
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+</script>

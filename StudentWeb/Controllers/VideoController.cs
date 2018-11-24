@@ -15,11 +15,19 @@ namespace StudentWeb.Controllers
         StudentEntities db = new StudentEntities();
      
         // GET: Video
-        public ActionResult Index(int? page)
+        public ActionResult Media(int? page)
         {
             //最新消息
             var pageNumber = page ?? 1;
-            var q = Videos.GetAll().OrderByDescending(c => c.Id);
+            var q = Videos.GetAll().Where(x=>x.Item== "媒體報導").OrderByDescending(c => c.Id);
+            ViewBag.Count = q.First().Id.ToString();
+            return View(q.ToList().ToPagedList(pageNumber, 10));
+        }
+        public ActionResult Lesson(int? page)
+        {
+            //最新消息
+            var pageNumber = page ?? 1;
+            var q = Videos.GetAll().Where(x => x.Item == "上課實況").OrderByDescending(c => c.Id);
             ViewBag.Count = q.First().Id.ToString();
             return View(q.ToList().ToPagedList(pageNumber, 10));
         }

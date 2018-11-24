@@ -216,7 +216,6 @@
                 <h2 id="newtit"> 最新消息</h2>
                 <hr />
                 <ul class="newsul " style="list-style-type: square">
-                    <li style="margin-top: 5px">
                         @foreach (var h in Model)
                         {
                             if (@h.Description.Count() < 10)
@@ -232,11 +231,8 @@
                         }
 
                     }
-
                         @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
-
                     </ul>
-
             </div>
         </div>
 

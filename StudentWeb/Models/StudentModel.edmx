@@ -155,6 +155,17 @@
           <Property Name="permissionId" Type="int" Nullable="false" />
           <Property Name="permissionName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="ScholarShip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Date" Type="nvarchar" MaxLength="15" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Video">
           <Key>
             <PropertyRef Name="Id" />
@@ -165,6 +176,7 @@
           <Property Name="href" Type="nvarchar(max)" />
           <Property Name="CreateTime" Type="datetime" />
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Item" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_employee_employeeCategory">
           <End Role="employeeCategory" Type="Self.employeeCategory" Multiplicity="1" />
@@ -218,6 +230,7 @@
           <EntitySet Name="JuniorHigh_School" EntityType="Self.JuniorHigh_School" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LastNews" EntityType="Self.LastNews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="permission" EntityType="Self.permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScholarShip" EntityType="Self.ScholarShip" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_employee_employeeCategory" Association="Self.FK_employee_employeeCategory">
             <End Role="employeeCategory" EntitySet="employeeCategory" />
@@ -279,6 +292,7 @@
           <EntitySet Name="ChildClasses" EntityType="StudentModel.ChildClass" />
           <EntitySet Name="HighClasses" EntityType="StudentModel.HighClass" />
           <EntitySet Name="Videos" EntityType="StudentModel.Video" />
+          <EntitySet Name="ScholarShips" EntityType="StudentModel.ScholarShip" />
         </EntityContainer>
         <EntityType Name="employee">
           <Key>
@@ -468,6 +482,18 @@
           <Property Name="href" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Item" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ScholarShip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -642,12 +668,25 @@
           <EntitySetMapping Name="Videos">
             <EntityTypeMapping TypeName="StudentModel.Video">
               <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="Item" ColumnName="Item" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="href" ColumnName="href" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScholarShips">
+            <EntityTypeMapping TypeName="StudentModel.ScholarShip">
+              <MappingFragment StoreEntitySet="ScholarShip">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
