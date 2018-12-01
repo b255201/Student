@@ -42,5 +42,7 @@ namespace StudentWeb.Models
         public virtual DbSet<HighClass> HighClasses { get; set; }
         public virtual DbSet<Video> Videos { get; set; }
         public virtual DbSet<ScholarShip> ScholarShips { get; set; }
+        public virtual DbSet<EDM> EDMs { get; set; }
+        public virtual DbSet<StudentImpression> StudentImpressions { get; set; }
     }
 }

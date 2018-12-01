@@ -25,6 +25,8 @@
         <EntityTypeShape EntityType="StudentModel.HighClass" Width="1.5" PointX="2.75" PointY="10.75" />
         <EntityTypeShape EntityType="StudentModel.Video" Width="1.5" PointX="10.375" PointY="7.75" />
         <EntityTypeShape EntityType="StudentModel.ScholarShip" Width="1.5" PointX="7.375" PointY="10.75" />
+        <EntityTypeShape EntityType="StudentModel.EDM" Width="1.5" PointX="11.375" PointY="3.75" />
+        <EntityTypeShape EntityType="StudentModel.StudentImpression" Width="1.5" PointX="9.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

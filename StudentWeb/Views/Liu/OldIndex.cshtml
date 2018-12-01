@@ -1,0 +1,454 @@
+﻿@{
+    Layout = "~/Views/Shared/Index_Layout.cshtml";
+}
+
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<StudentWeb.Models.LastNew>
+@{
+    var a = 1;
+}
+
+<style>
+    /*formcontactmemo*/
+    .memotest {
+        display: none
+    }
+
+    .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+        z-index: 1 !important;
+    }
+
+
+    .img-news {
+        /* box-shadow: 0 16px 8px 0 rgba(0,0,0,0.16),0 8px 16px 0 rgba(0,0,0,0.12);*/
+        background-color: #ffffff;
+        box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
+        padding: 10px;
+    }
+
+    .w3-teal, .w3-hover-teal:hover {
+        color: #fff !important;
+        background-color: #009688 !important
+    }
+
+    .w3-container:after, .w3-container:before, .w3-panel:after, .w3-panel:before, .w3-row:after, .w3-row:before, .w3-row-padding:after, .w3-row-padding:before,
+    .w3-cell-row:before, .w3-cell-row:after, .w3-clear:after, .w3-clear:before, .w3-bar:before, .w3-bar:after {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+    #newtit {
+        padding-top: 20px;
+        font-weight: 700;
+        color: darkslategrey;
+    }
+
+    ul {
+        font-size: 18px;
+    }
+
+        ul > li {
+            color: red;
+        }
+
+            ul > li > a {
+                color: whitesmoke;
+                font-size: 12px;
+            }
+
+                ul > li > a:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+
+
+
+
+    .Active-news-rwd-display {
+        display: none;
+    }
+
+    .Active-news-display {
+        display: block;
+    }
+
+    .modal-backdrop {
+        background-color: white !important;
+    }
+
+        .modal-backdrop.in {
+            opacity: 0.2 !important
+        }
+
+    @@media (max-width: 992px) {
+        #newtit {
+            margin-top: -60px !important;
+        }
+        /*.img-href {
+            margin-left: -500px !important;
+            margin-right: -500px !important;
+            padding-left: -15px !important;
+            padding-right: -15px !important;
+        }*/
+        .Active-news-display {
+            display: none;
+        }
+
+        .Active-news-rwd-display {
+            display: block;
+        }
+
+        .LiuTitle {
+            margin-top: 2px !important;
+        }
+    }
+</style>
+
+
+<div class=" w3-teal" style="height:80px;">
+    <h1 style="padding-top:20px;padding-left:35px;">活動消息</h1>
+</div>
+<div class="col-md-12" style="background-color:	whitesmoke">
+
+    <div class="row" style="text-align:center">
+
+        <div id="myCarousel" class="carousel slide Active-news-rwd-display" data-ride="carousel">
+            <!-- Indicators -->
+            @*<ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>*@
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner ">
+
+
+                @foreach (var i in ViewBag.Activity)
+                {
+                    if (a == 1)
+                    {
+
+                        <div class="item active " style="padding:10px;">
+
+                            <a href="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })" target="_blank">
+                                <img class="img-news" style="width:380px;height:350px;margin:0 auto;" src="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })">
+                            </a>
+                        </div>
+                        a++;
+                    }
+                    else
+                    {
+                        <div class="item " style="padding:10px;">
+                            <a href="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })" target="_blank">
+                                <img class="img-news" style="width:380px;height:350px;margin:0 auto;" src="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })">
+                            </a>
+                        </div>
+                    }
+
+                }
+
+                @*<div class="item active " style="padding:10px;">
+                        <img class="img-news" style="width:380px;height:350px;margin:0 auto;" src="~/Content/img/DM/劉毅英文歡慶50週年LINE_P20180316_11262505.jpg" alt="Los Angeles">
+
+                    </div>
+
+                    <div class="item " style="padding:10px;">
+                        <img class="img-news" style="width:380px;height:350px;margin:0 auto;" src="~/Content/img/DM/劉毅英文高三招生簡章_20180409_180428_0002.jpg" alt="Chicago">
+                    </div>*@
+
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+
+
+        @foreach (var i in ViewBag.Activity)
+        {
+            <a href="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })" target="_blank" class="kd-md-4 Active-news-display">
+                <div class="news-card ">
+                    <img id="myImg1" data-cid="1" class="img-news" src="@Url.Action("GetImageFile","Liu", new { fileName= i.Image })">
+                </div>
+            </a>
+
+        }
+
+
+
+
+    </div>
+</div>
+
+
+<div class="col-md-6 photo-block">
+    <div class="LiuTitle" style="text-align:left;"><img src="~/Content/img/liu-Yi.png" /></div>
+    <h2 class="LiuTitle" style="font-weight:800;text-align:left;color:white">劉毅</h2>
+    <div class="introLiu">1971年 劉毅老師發明「模考制度」，開始在台南一中對面的天主堂教英文。由八位同學開始教起。現在台大醫院副院長王主科教授就是當時的學生。</div>
+    <div class="introLiu">1972年 「劉毅英文」有四位同學考上台大醫科，陳耀楨為榜道。</div>
+    <div class="introLiu">1974年 「劉毅英文」轉戰台北，第一天只有一位同學，但劉毅老師仍然拼命上課，從此學生人數不斷增加。</div>
+    <div class="introLiu">1984年 創立「學習出版公司」，為當時唯一的專業英語出版，「劉毅英文」學生人數已達1200人。</div>
+    <div class="introLiu">1988年 劉毅老師發明「一天背好1000個英單字」學生人數突破2000人。</div>
+    <div class="introLiu">1995年 發明「考前魔鬼營」，一天讀15小時，勝過在家讀五天震撼補教界。</div>
+    <div class="introLiu">2000年 發明「超級戰鬥營」，無論規模、成效已是補教界的典範。</div>
+    <div class="introLiu">2003年 發明「一口氣英語」，一舉解決學英語的困擾，學生人數突破6000人。</div>
+    <div class="introLiu">2007年 成立「劉毅英文教育機構」，同時在班上課學生人數已達12000人。</div>
+</div>
+
+
+<div class="col-md-6 slide-block">
+    <div class="activity-content">
+
+        <div class="activity-title col-md-12">
+
+
+            <div class="imglist">
+                <h2 id="newtit"> 最新消息</h2>
+                <hr />
+                <ul class="newsul " style="list-style-type: square">
+                        @foreach (var h in Model)
+                        {
+                            if (@h.Description.Count() < 10)
+                            {
+                            <li style="margin-top: 5px"><a style="font-size:14px;cursor:pointer" onclick="LoginDialog(@h.Id,'@h.title')">@h.CreateTime.ToShortDateString() &nbsp &nbsp @h.title &nbsp<span class="ulspan" style="color:#FF0000;cursor:pointer">....read more</span></a></li>
+
+
+                        }
+                        else
+                        {
+                            <li style="margin-top: 5px"><a style="font-size:14px;cursor:pointer" onclick="LoginDialog(@h.Id,'@h.title')">@h.CreateTime.ToShortDateString() &nbsp &nbsp @h.title &nbsp<span class="ulspan" style="color:#FF0000;cursor:pointer">....read more</span></a></li>
+
+                        }
+
+                    }
+                        @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                    </ul>
+            </div>
+        </div>
+
+
+
+        @*<div class="clear"></div>
+            <div class="activity-content-bottom">
+                <div class="activity-counter col-md-8">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn-ghost" onclick="#">考衝班報名</button>
+                </div>
+                <div class="clear"></div>
+            </div>*@
+    </div>
+</div>
+<div class="clear"></div>
+
+
+<div class="col-md-12 contact-block" id="Contactdiv" style="text-align:center;height:auto">
+
+
+    <div class="contactword">
+        預約試聽
+
+    </div>
+
+    <div class="col-md-3"></div>
+
+    @using (Html.BeginForm("InsertContact", "LiuController", FormMethod.Post, new { @id = "ContactForm", @class = "form-horizontal col-sm-6 ", role = "form" }))
+    {
+        <div class="form-group" style="text-align:left">
+
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="name">姓名:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="name" placeholder="姓名(必填)" name="name">
+            </div>
+        </div>
+        <div class="form-group" style="text-align:left">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Schoolname">學校:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="Schoolname" placeholder="學校" name="Schoolname">
+            </div>
+        </div>
+        <div class="form-group" style="text-align:left">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="email">信箱:</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control" id="email" placeholder="信箱" name="email">
+            </div>
+        </div>
+        <div class="form-group" style="text-align:left">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Phone">手機:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="Phone" placeholder="手機(電話或手機選一)" onkeypress='if (event.keyCode!=46 && (event.keyCode < 48 || event.keyCode > 57)) event.returnValue=false' name="Phone">
+            </div>
+        </div>
+        <div class="form-group" style="text-align:left">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="LocalPhone">電話:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="LocalPhone" placeholder="電話(電話或手機選一)" onkeypress='if (event.keyCode!=46 && (event.keyCode < 48 || event.keyCode > 57)) event.returnValue=false' name="LocalPhone">
+            </div>
+        </div>
+        <div class="form-group" style="text-align:left">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Course">課程:</label>
+            <div class="col-sm-9">
+                <select class="form-control" id="Course" name="Course" onchange="Shomemo(this.value)">
+                    <option value="小六升國七精熟銜接班">小六升國七精熟銜接班</option>
+                    <option value="國七升國八超前進度班">國七升國八超前進度班</option>
+                    <option value="會考保證班">會考保證班</option>
+                    <option value="高一英文課程">高一英文課程</option>
+                    <option value="高一數學課程">高一數學課程</option>
+                    <option value="高二三英文課程">高二三英文課程</option>
+                    <option value="高二數學課程">高二數學課程</option>
+                    <option value="學測保證班">學測保證班</option>
+                    <option value="TOEIC新制多益課程">TOEIC新制多益課程</option>
+                    <option value="GEPT全民英檢中級複試班">GEPT全民英檢中級複試班</option>
+                    <option value="高效英文會話">高效英文會話</option>
+                    <option value="軍公教人員免費全民英檢班">軍公教人員免費全民英檢班</option>
+                    <option value="中低收入戶及原或新住民學生，免費英語課程">中低收入戶及原或新住民學生，免費英語課程</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group memotest" style="text-align:left;" id="memoform">
+            <label style="margin-right:-15px;color:black" class="control-label col-sm-2" for="Memo">備註:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="Memo" placeholder="備註" name="Memo">
+            </div>
+        </div>
+
+        <div class="form-group" style="text-align:left;margin-top:25px">
+            <label style="margin-right:-15px;" class="control-label col-sm-2"></label>
+            <div class="col-sm-9">
+                <div style="text-align:right">
+                    <a class="type-dark btn-ghost" onclick="ContactSend()" style="cursor:pointer">送出</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<div class="clear"></div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(function () {
+        $("body").on("click", "#pretrial", pretrial);
+    })
+    function pretrial() {
+
+        $('html, body').animate({
+            scrollTop: $("#Contactdiv").offset().top
+        }, 2000);
+    }
+
+    function Shomemo(x) {
+        if (x == "其他") {
+            $("#memoform").removeClass("memotest");
+
+        } else {
+            $("#memoform").addClass("memotest");
+        }
+    }
+
+    function ContactSend() {
+        if ($("#name").val().trim() == "") {
+            alert("請填寫姓名");
+            return false;
+        }
+
+        if ($("#email").val().trim() != "") {
+            var emailRule = /^\w+((-\w+)|(\.\w+))*\@@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/g;
+            if (emailRule.test($("#email").val()) == false) {
+                alert("信箱格式有誤,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() == "") {
+            if ($("#LocalPhone").val().trim() == "") {
+                alert("電話或手機請選擇一樣填寫");
+                return false;
+            }
+        }
+
+        if ($("#Phone").val().trim() != "") {
+            var Phone = $("#Phone").val().trim();
+            Phone = Phone.replace(/\s+/g, "").length;
+            if (Phone != "10") {
+                alert("手機請填寫10碼,請檢查");
+                return false;
+            }
+        }
+
+        if ($("#LocalPhone").val().trim() != "") {
+            var LocalPhone = $("#LocalPhone").val().trim();
+            LocalPhone = LocalPhone.replace(/\s+/g, "").length;
+            if (LocalPhone < "8") {
+                alert("電話至少8碼,請檢查");
+                return false;
+            }
+        }
+        // 送出事件紀錄
+        //gtag("event", "點擊", {
+        //    "event_category": "預約試聽",
+        //    "event_label": "點擊次數",
+        //    "value": 1
+        //});
+
+        $.ajax({
+            url: "/Liu/InsertContact",
+            type: "POST",
+            data: $("#ContactForm").serialize(),
+            success: function (data) {
+                if (data.Status == "0") {
+                    alert("\n訊息：送出成功，我們會盡快聯繫您！");
+
+                } else {
+                    var message = data.StatusDesc;
+                    alert(message);
+                }
+            },
+            error: function (err) {
+                alert(err.Status);
+            }
+        });
+    }
+
+
+
+    //登入案紐
+    function LoginDialog(id, title) {
+        var title = title;
+        var url = "/Dialog/LastNewInfo/" + id;
+        $.post(url, {},
+            function (data, status) {
+                if (status == "success") {
+                    var htmlContent = data.replace(/\r\n/g, "");
+                    exitConfirmDialog = new BootstrapDialog.show({
+                        title: title,
+                        message: htmlContent,
+                        //closable: false,     //右上角的X
+                        buttons: [
+                            {
+                                label: '離開',
+                                action: function (dialog) {
+                                    dialog.close();
+                                }
+                            }
+                        ]
+                    });
+                }
+            });
+    }
+</script>

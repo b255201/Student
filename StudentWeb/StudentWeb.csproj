@@ -169,6 +169,7 @@
     <Compile Include="Controllers\DialogController.cs" />
     <Compile Include="Controllers\HighLessonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImpressionController.cs" />
     <Compile Include="Controllers\JuniorLessonController.cs" />
     <Compile Include="Controllers\LiuController.cs" />
     <Compile Include="Controllers\LiveController.cs" />
@@ -181,6 +182,9 @@
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChildClass.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDM.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\elementary_Book.cs">
@@ -231,6 +235,9 @@
     </Compile>
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Models\ScholarShip.cs">
+      <DependentUpon>StudentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentImpression.cs">
       <DependentUpon>StudentModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Video.cs">
@@ -5623,6 +5630,7 @@
     <Content Include="Content\css\modal.css" />
     <Content Include="Content\css\mystyle.css" />
     <Content Include="Content\css\NavBar.css" />
+    <Content Include="Content\css\NewNavBar.css" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\templatemo-style.css" />
@@ -5852,6 +5860,43 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\venue-gallery\env1.jpg" />
+    <Content Include="img\venue-gallery\env4.jpg" />
+    <Content Include="img\venue-gallery\env5.jpg" />
+    <Content Include="img\venue-gallery\env6.jpg" />
+    <Content Include="js\main.js" />
+    <Content Include="lib\animate\animate.css" />
+    <Content Include="lib\animate\animate.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\easing\easing.js" />
+    <Content Include="lib\easing\easing.min.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\jquery\jquery-migrate.min.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="lib\owlcarousel\owl.carousel.js" />
+    <Content Include="lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="lib\style.css" />
+    <Content Include="lib\superfish\hoverIntent.js" />
+    <Content Include="lib\superfish\superfish.js" />
+    <Content Include="lib\superfish\superfish.min.js" />
+    <Content Include="lib\venobox\venobox.css" />
+    <Content Include="lib\venobox\venobox.js" />
+    <Content Include="lib\venobox\venobox.min.js" />
+    <Content Include="lib\wow\wow.js" />
+    <Content Include="lib\wow\wow.min.js" />
     <Content Include="Scripts\bootstrap-dialog.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -6215,6 +6260,12 @@
     <Content Include="Content\assets\layouts\layout7\img\Thumbs.db" />
     <Content Include="Content\assets\pages\media\blog\Thumbs.db" />
     <Content Include="Content\assets\pages\media\pages\Thumbs.db" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\owlcarousel\LICENSE" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\easyResponsiveTabs.js" />
@@ -6292,6 +6343,8 @@
     <Content Include="Views\Video\Media.cshtml" />
     <Content Include="Views\Video\Lesson.cshtml" />
     <Content Include="Views\ScholarShip\Index.cshtml" />
+    <Content Include="Views\Liu\OldIndex.cshtml" />
+    <Content Include="Views\Impression\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
